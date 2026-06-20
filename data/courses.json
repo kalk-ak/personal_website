@@ -1,0 +1,225 @@
+[
+  {
+    "courseNumber": "EN.601.464",
+    "name": "Artificial Intelligence",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.464",
+    "description": "Situates the study of Artificial Intelligence within the broader context of Cognitive Science, then covers principles and methods for reasoning, planning, and learning, including both conventional and deep learning approaches."
+  },
+  {
+    "courseNumber": "EN.601.412",
+    "name": "Big Data Systems",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/course-descriptions/computer_science_601/",
+    "description": "A systems-oriented course covering the design and implementation of large-scale data processing platforms, including distributed storage, data-parallel programming frameworks (Hadoop, Spark), and techniques for processing massive datasets efficiently."
+  },
+  {
+    "courseNumber": "MATH 2374",
+    "name": "CSE Multivariable Calculus and Vector Analysis",
+    "school": "University of Minnesota",
+    "link": "https://umtc.catalog.prod.coursedog.com/courses/0036951",
+    "description": "Covers the derivative as a linear map, differential and integral calculus of functions of several variables including change of coordinates using Jacobians, line and surface integrals, and the theorems of Gauss, Green, and Stokes."
+  },
+  {
+    "courseNumber": "AS.171.105",
+    "name": "Classical Mechanics I",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=AS.171.105",
+    "description": "An in-depth introduction to classical mechanics for physics majors/minors and other students with a strong interest in physics, treating fewer topics than the general physics sequence but with greater mathematical sophistication."
+  },
+  {
+    "courseNumber": "CSCI 2033",
+    "name": "Computational Linear Algebra",
+    "school": "University of Minnesota",
+    "link": "https://umtc.catalog.prod.coursedog.com/courses/8051471",
+    "description": "Covers matrices and linear transformations, linear vector spaces and inner product spaces, systems of linear equations, eigenvalues and singular values, and computational matrix methods using software such as MATLAB."
+  },
+  {
+    "courseNumber": "EN.601.229",
+    "name": "Computer System Fundamentals",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.229",
+    "description": "Covers modern computer systems from a software perspective: binary data representation, machine arithmetic, assembly language, computer architecture, performance optimization, memory hierarchy, virtual memory, Unix systems programming, networking, and concurrency."
+  },
+  {
+    "courseNumber": "CSCI 2011",
+    "name": "Discrete Structures of Computer Science",
+    "school": "University of Minnesota",
+    "link": "https://umtc.catalog.prod.coursedog.com/courses/0036721",
+    "description": "Covers the foundations of discrete mathematics for computer science: sets, sequences, functions, big-O notation, propositional and predicate logic, proof methods, counting methods, recursion and recurrences, relations, and graph fundamentals."
+  },
+  {
+    "courseNumber": "AS.173.116",
+    "name": "Electricity and Magnetism Laboratory",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=AS.173.116",
+    "description": "Laboratory experiments chosen to complement the Electricity and Magnetism lecture course, introducing students to experimental techniques and statistical analysis."
+  },
+  {
+    "courseNumber": "AS.171.102",
+    "name": "General Physics II",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=AS.171.102",
+    "description": "The second semester of a calculus-based general physics sequence, covering wave motion, electricity and magnetism, optics, and modern physics."
+  },
+  {
+    "courseNumber": "EN.520.666",
+    "name": "Information Extraction",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.520.666",
+    "description": "A graduate-level course covering techniques for automatically extracting structured information from unstructured text and other data sources, including named entity recognition, relation extraction, and template filling, with emphasis on statistical and machine learning approaches."
+  },
+  {
+    "courseNumber": "EN.601.466",
+    "name": "Information Retrieval and Web Agents",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.466",
+    "description": "An in-depth, hands-on study of current information retrieval techniques and their application to intelligent web agents: document retrieval models, clustering, automatic indexing, query expansion, relevance feedback, and search-engine-scale IR issues."
+  },
+  {
+    "courseNumber": "601.220",
+    "name": "Intermediate Programming",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.220",
+    "description": "Teaches intermediate to advanced programming using C and C++: low-level programming techniques alongside object-oriented class design, pointers, dynamic memory allocation, polymorphism, inheritance, templates, collections, and exceptions."
+  },
+  {
+    "courseNumber": "EN.601.433",
+    "name": "Intro Algorithm",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.433",
+    "description": "Concentrates on the design of algorithms and rigorous analysis of their efficiency: worst-case and average-case complexity, dynamic programming, sorting, searching, selection, and advanced data structures."
+  },
+  {
+    "courseNumber": "CSCI 1933",
+    "name": "Introduction to Algorithms and Data Structures",
+    "school": "University of Minnesota",
+    "link": "https://umtc.catalog.prod.coursedog.com/courses/8103461",
+    "description": "Covers advanced object-oriented programming to implement abstract data types (stacks, queues, linked lists, hash tables, binary trees) in Java, including inheritance, searching/sorting algorithms, and basic algorithmic analysis."
+  },
+  {
+    "courseNumber": "EN.601.454",
+    "name": "Introduction to Augmented Reality",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.454",
+    "description": "Introduces the field of Augmented Reality — basic definitions, principles, and applications — and explains how fundamental computer vision concepts apply to AR development, including calibration, tracking, and visualization."
+  },
+  {
+    "courseNumber": "CSCI 1133",
+    "name": "Introduction to Computing and Programming Concepts",
+    "school": "University of Minnesota",
+    "link": "https://umtc.catalog.prod.coursedog.com/courses/8096661",
+    "description": "Introduces fundamental principles of computer science and programming, emphasizing problem solving and computing with data, using Python to implement solutions to a broad range of computational problems."
+  },
+  {
+    "courseNumber": "EN.553.436",
+    "name": "Introduction to Data Science",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.553.436",
+    "description": "A thorough survey of data science methods balancing theory and application: supervised methods for regression and classification (regression, kNN, SVM, decision trees, random forests) and unsupervised methods (PCA, K-means, Gaussian mixtures), using Python and SQL."
+  },
+  {
+    "courseNumber": "STAT 3021",
+    "name": "Introduction to Probability and Statistics",
+    "school": "University of Minnesota",
+    "link": "https://umtc.catalog.prod.coursedog.com/courses/0016221",
+    "description": "An introductory statistics course covering elementary probability theory and an introduction to statistical inference, including testing, estimation, and confidence statements."
+  },
+  {
+    "courseNumber": "EN.520.439",
+    "name": "Machine Learning for Medical Applications",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.520.439",
+    "description": "Covers basic principles of AI and machine learning applied to medicine, including biosignals (EEG, ECG) and medical imaging, culminating in a final project applying these techniques to a real-world medical problem."
+  },
+  {
+    "courseNumber": "EN.601.482",
+    "name": "Machine Learning: Deep Learning",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.482",
+    "description": "Covers deep learning as a tool for data-intensive learning problems — supervised learning, dimensionality reduction, and control — with applications in speech, text, computer vision, medical imaging, and robotics."
+  },
+  {
+    "courseNumber": "EN.601.468",
+    "name": "Machine Translation",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.468",
+    "description": "Explores how systems like Google Translate convert text between languages, why translation systems make certain kinds of errors, and how modern translation systems learn from millions of words of already-translated text."
+  },
+  {
+    "courseNumber": "EN.601.230",
+    "name": "Mathematical Foundations for Computer Science",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.230",
+    "description": "Introduces mathematical reasoning and discrete structures relevant to computer science: logic, proof techniques, sets, relations, functions, recurrences, counting, asymptotic analysis, discrete probability, graphs, and trees."
+  },
+  {
+    "courseNumber": "EN.601.465",
+    "name": "Natural Language Processing",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.465",
+    "description": "An in-depth introduction to core techniques for analyzing, transforming, and generating human language, spanning linguistics, modeling, algorithms, and applications."
+  },
+  {
+    "courseNumber": "EN.601.472",
+    "name": "Natural Language Processing for Computational Social Science",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.472",
+    "description": "Explores how NLP can be used to understand social phenomena that manifest in text, such as toxicity, discrimination, and propaganda, combining text-analysis methodology with statistical methods like time series analysis and causal inference."
+  },
+  {
+    "courseNumber": "EN.601.471",
+    "name": "Natural Language Processing: Self-Supervised Models",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.471",
+    "description": "A thorough introduction to the self-supervised (pre-trained) learning techniques that have transformed NLP, with students designing, implementing, and understanding their own self-supervised neural network models in PyTorch."
+  },
+  {
+    "courseNumber": "EN.601.420",
+    "name": "Parallel Computing & Performance Engineering",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.420",
+    "description": "Studies parallelism in data science — instruction-level parallelism, shared-memory multicore computing, distributed computing, and data-parallel frameworks (Dask, Spark, Ray) — drawing examples from data analytics and machine learning."
+  },
+  {
+    "courseNumber": "STAT 3301",
+    "name": "Regression and Statistical Computing",
+    "school": "University of Minnesota",
+    "link": "https://umtc.catalog.prod.coursedog.com/courses/8190581",
+    "description": "A second statistics course teaching students to analyze data using multiple linear regression — inference, diagnostics, validation, transformations, and model selection — and to design Monte Carlo simulation studies."
+  },
+  {
+    "courseNumber": "EN.553.402",
+    "name": "Research and Design in Applied Mathematics: Data Mining",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.553.402",
+    "description": "A project-oriented course focused on practical applications of machine learning and data mining, in which teams of students work throughout the semester on topics chosen jointly with the instructor."
+  },
+  {
+    "type": "Certification",
+    "name": "Probability & Statistics for Machine Learning & Data Science",
+    "school": "DeepLearning.AI",
+    "link": "https://www.coursera.org/learn/machine-learning-probability-and-statistics",
+    "issued": "May 2026",
+    "credentialId": "P0XVJJRBCHM2",
+    "description": "Covers probability theory, common distributions, hypothesis testing, and statistical inference, the foundations used to reason about uncertainty in ML models."
+  },
+  {
+    "type": "Certification",
+    "name": "Calculus for Machine Learning and Data Science",
+    "school": "DeepLearning.AI",
+    "link": "https://www.coursera.org/learn/machine-learning-calculus",
+    "issued": "Nov 2025",
+    "credentialId": "VLFXILPABP1Y",
+    "description": "Covers derivatives, gradients, and multivariable calculus, building the optimization intuition behind gradient descent and how ML models actually learn."
+  },
+  {
+    "type": "Certification",
+    "name": "Linear Algebra for Machine Learning and Data Science",
+    "school": "DeepLearning.AI",
+    "link": "https://www.coursera.org/learn/machine-learning-linear-algebra",
+    "issued": "Sep 2025",
+    "credentialId": "7WFA7H8PGYR4",
+    "description": "Covers vectors, matrices, eigenvalues, and linear transformations, the math underneath how data and model weights are actually represented and manipulated."
+  }
+]
