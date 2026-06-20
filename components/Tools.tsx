@@ -131,6 +131,7 @@ const categories: Category[] = [
   {
     title: "Backend & Infra",
     color: "#7c3aed",
+    reverse: true,
     tools: [
       { name: "FastAPI", icon: SiFastapi, description: "Go-to framework for fast, typed APIs.", url: "https://fastapi.tiangolo.com/" },
       { name: "PostgreSQL", icon: SiPostgresql, description: "My default relational database.", url: "https://www.postgresql.org/" },
@@ -159,6 +160,7 @@ const categories: Category[] = [
   {
     title: "Languages & Low-Level",
     color: "#38bdf8",
+    reverse: true,
     tools: [
       { name: "C++", icon: SiCplusplus, description: "One of my first languages. Performance critical code and robotics, close to the hardware.", url: "https://isocpp.org/" },
       { name: "C", icon: SiC, description: "What's underneath everything else.", url: "https://en.wikipedia.org/wiki/C_(programming_language)" },
@@ -176,6 +178,7 @@ const categories: Category[] = [
   {
     title: "Dev Environment",
     color: "#a3e635",
+    reverse: true,
     tools: [
       { name: "Hyprland", icon: SiHyprland, description: "The window manager my whole desktop is built around.", url: "https://hyprland.org/" },
       { name: "Neovim", icon: SiNeovim, description: "My editor, configured to move as fast as I think.", url: "https://neovim.io/" },
