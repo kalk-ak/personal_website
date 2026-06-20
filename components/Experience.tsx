@@ -66,7 +66,7 @@ const experiences: ExperienceEntry[] = [
       <>
         Building a high-throughput data acquisition system for the{" "}
         <a
-          href="https://www.fnal.gov"
+          href="https://spinquest.fnal.gov/physics-of-spinquest/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#00f5d4] underline underline-offset-2 hover:text-white transition-colors"

@@ -54,7 +54,7 @@ const terminalScript = [
   { cmd: "whoami", output: ["ML Engineer | Roboticist | Systems Builder"] },
   {
     cmd: "cat mission.txt",
-    output: ["Build things that impact human lives,", "and keep learning the whole way there."],
+    output: ["Build things that impact human lives,", "and keep learning along the way."],
   },
 ];
 
@@ -210,7 +210,7 @@ export default function About() {
               really stopped. I like to build and create more than I consume, which is
               probably why I love{" "}
               <span className="text-[#00f5d4]">science</span> and{" "}
-              <span className="text-[#00f5d4]">technology</span> too.
+              <span className="text-[#00f5d4]">technology</span>.
             </p>
             <p className="text-[#94a3b8] text-base leading-relaxed">
               Lately I&apos;ve been all in on{" "}
