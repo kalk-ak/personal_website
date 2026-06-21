@@ -12,6 +12,7 @@ interface DocLink {
 }
 
 interface ExperienceEntry {
+  id?: string;
   role: string;
   company: string;
   link: string;
@@ -39,6 +40,7 @@ const experiences: ExperienceEntry[] = [
     current: true,
   },
   {
+    id: "data-engineer-ml-engineer",
     role: "Data Engineer & Machine Learning Engineer",
     company: "Under Anthony J. Kearsley",
     link: "https://www.siam.org/publications/siam-news/authors/anthony-j-kearsley/?_page=1&keywords=&_limit=10&authorPersonKey=f253e6d3-b213-4185-9265-b0df853bd108",
@@ -166,6 +168,7 @@ export default function Experience() {
               return (
                 <motion.div
                   key={i}
+                  id={exp.id}
                   initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
