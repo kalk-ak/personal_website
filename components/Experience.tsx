@@ -64,7 +64,7 @@ const experiences: ExperienceEntry[] = [
     repoLink: "https://github.com/kalk-ak/SpinQuest-TDC-FW/tree/master/DAQ-Simulator",
     docs: [
       {
-        label: "LinkedIn Post",
+        label: "Simulation Demo",
         href: "https://www.linkedin.com/feed/update/urn:li:activity:7446627649042608128/",
         icon: "linkedin",
       },
