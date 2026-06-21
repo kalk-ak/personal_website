@@ -261,17 +261,18 @@ export default function Experience() {
                       )}
 
                       {exp.docs && exp.docs.length > 0 && (
-                        <div className="mt-4 flex flex-wrap gap-4">
+                        <div className="mt-4 flex flex-wrap gap-3">
                           {exp.docs.map((doc) => (
                             <a
                               key={doc.href}
                               href={doc.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-1.5 text-xs font-mono text-[#64748b] hover:text-[#00f5d4] transition-colors"
+                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium text-[#00f5d4] bg-[rgba(0,245,212,0.08)] border border-[rgba(0,245,212,0.3)] hover:bg-[rgba(0,245,212,0.15)] hover:border-[#00f5d4] transition-colors"
                             >
                               <FileText size={13} />
                               {doc.label}
+                              <ExternalLink size={11} />
                             </a>
                           ))}
                         </div>
