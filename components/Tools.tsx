@@ -131,7 +131,6 @@ const categories: Category[] = [
   {
     title: "Backend & Infra",
     color: "#7c3aed",
-    reverse: true,
     tools: [
       { name: "FastAPI", icon: SiFastapi, description: "Go-to framework for fast, typed APIs.", url: "https://fastapi.tiangolo.com/" },
       { name: "PostgreSQL", icon: SiPostgresql, description: "My default relational database.", url: "https://www.postgresql.org/" },
