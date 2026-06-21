@@ -3,12 +3,13 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MapPin, ExternalLink, FileText } from "lucide-react";
-import { GithubIcon } from "@/components/Icons";
+import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import FadeSection from "@/components/FadeSection";
 
 interface DocLink {
   label: string;
   href: string;
+  icon?: "file" | "linkedin";
 }
 
 interface ExperienceEntry {
@@ -61,6 +62,13 @@ const experiences: ExperienceEntry[] = [
     company: "Under Petar Maksimovic",
     link: "https://physics-astronomy.jhu.edu/directory/petar-maksimovic/",
     repoLink: "https://github.com/kalk-ak/SpinQuest-TDC-FW/tree/master/DAQ-Simulator",
+    docs: [
+      {
+        label: "LinkedIn Post",
+        href: "https://www.linkedin.com/feed/update/urn:li:activity:7446627649042608128/",
+        icon: "linkedin",
+      },
+    ],
     location: "Baltimore, Maryland, United States",
     period: "Nov 2025 to Present",
     type: "Research",
@@ -273,7 +281,11 @@ export default function Experience() {
                               rel="noopener noreferrer"
                               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium text-[#00f5d4] bg-[rgba(0,245,212,0.08)] border border-[rgba(0,245,212,0.3)] hover:bg-[rgba(0,245,212,0.15)] hover:border-[#00f5d4] transition-colors"
                             >
-                              <FileText size={13} />
+                              {doc.icon === "linkedin" ? (
+                                <LinkedinIcon size={13} />
+                              ) : (
+                                <FileText size={13} />
+                              )}
                               {doc.label}
                               <ExternalLink size={11} />
                             </a>
