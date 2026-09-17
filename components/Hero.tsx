@@ -292,7 +292,7 @@ export default function Hero() {
         >
           {[
             { icon: GithubIcon, href: "https://github.com/kalk-ak", label: "GitHub" },
-            { icon: LinkedinIcon, href: "https://linkedin.com/in/", label: "LinkedIn" },
+            { icon: LinkedinIcon, href: "https://www.linkedin.com/in/kaleb-aklilu/", label: "LinkedIn" },
             { icon: Mail, href: "mailto:kalebaklilu3@gmail.com", label: "Email" },
           ].map(({ icon: Icon, href, label }) => (
             <a

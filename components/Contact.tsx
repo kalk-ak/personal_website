@@ -17,7 +17,7 @@ const socials = [
     icon: LinkedinIcon,
     label: "LinkedIn",
     handle: "Kaleb Aklilu",
-    href: "https://linkedin.com/in/",
+    href: "https://www.linkedin.com/in/kaleb-aklilu/",
     color: "#38bdf8",
   },
   {
