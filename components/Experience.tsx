@@ -29,15 +29,39 @@ interface ExperienceEntry {
 
 const experiences: ExperienceEntry[] = [
   {
+    role: "Course Assistant, Artificial Intelligence",
+    company: "Johns Hopkins Whiting School of Engineering",
+    link: "https://engineering.jhu.edu/",
+    location: "Baltimore, Maryland, United States",
+    period: "Aug 2026 to Present",
+    type: "Part-time",
+    description:
+      "Guide undergraduate and graduate students through the fundamentals of AI and machine learning: supervised and unsupervised learning, neural network design, computer vision, NLP, and reinforcement learning. Run discussion sections and office hours, and grade assignments, projects, and exams.",
+    tech: ["University Teaching", "Machine Learning", "Deep Learning", "Reinforcement Learning"],
+    current: true,
+  },
+  {
     role: "Machine Learning Engineer",
     company: "Lockheed Martin",
     link: "https://www.lockheedmartin.com/",
     location: "Orlando, Florida, United States",
-    period: "May 2026 to Present",
+    period: "May 2026 to Aug 2026",
     type: "Internship",
     description:
       "Using control theory, reinforcement learning, and game theory to solve guidance and navigation problems for autonomous systems.",
     tech: [],
+    current: false,
+  },
+  {
+    role: "Senator",
+    company: "National Society of Black Engineers",
+    link: "https://www.nsbe.org/",
+    location: "Baltimore, Maryland, United States",
+    period: "May 2026 to Present",
+    type: "Part-time",
+    description:
+      "Mentor high school students who want to go into engineering, helping them with college applications, academic prep, and the path into top programs. Gather what members of the local chapter care about and bring it to regional and national senate meetings.",
+    tech: ["Youth Mentoring"],
     current: true,
   },
   {
@@ -70,7 +94,7 @@ const experiences: ExperienceEntry[] = [
       },
     ],
     location: "Baltimore, Maryland, United States",
-    period: "Nov 2025 to Present",
+    period: "Nov 2025 to Aug 2026",
     type: "Research",
     description: (
       <>
@@ -90,10 +114,10 @@ const experiences: ExperienceEntry[] = [
       </>
     ),
     tech: ["C++", "CMake", "Multithreading", "TCP/UDP Sockets", "Pandas"],
-    current: true,
+    current: false,
   },
   {
-    role: "Course Assistant, Physics 2",
+    role: "Lecture Assistant, Physics 2",
     company: "Johns Hopkins Whiting School of Engineering",
     link: "https://engineering.jhu.edu/",
     location: "Baltimore, Maryland, United States",

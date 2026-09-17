@@ -7,13 +7,6 @@
     "description": "Situates the study of Artificial Intelligence within the broader context of Cognitive Science, then covers principles and methods for reasoning, planning, and learning, including both conventional and deep learning approaches."
   },
   {
-    "courseNumber": "EN.601.412",
-    "name": "Big Data Systems",
-    "school": "Johns Hopkins University",
-    "link": "https://e-catalogue.jhu.edu/course-descriptions/computer_science_601/",
-    "description": "A systems-oriented course covering the design and implementation of large-scale data processing platforms, including distributed storage, data-parallel programming frameworks (Hadoop, Spark), and techniques for processing massive datasets efficiently."
-  },
-  {
     "courseNumber": "MATH 2374",
     "name": "CSE Multivariable Calculus and Vector Analysis",
     "school": "University of Minnesota",
@@ -40,6 +33,13 @@
     "school": "Johns Hopkins University",
     "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.229",
     "description": "Covers modern computer systems from a software perspective: binary data representation, machine arithmetic, assembly language, computer architecture, performance optimization, memory hierarchy, virtual memory, Unix systems programming, networking, and concurrency."
+  },
+  {
+    "courseNumber": "EN.601.415",
+    "name": "Databases",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.415",
+    "description": "Introduces database management systems and database design: the relational and object-oriented data models, query languages and query optimization, transaction processing, parallel and distributed databases, recovery and security, and data mining."
   },
   {
     "courseNumber": "CSCI 2011",
@@ -98,13 +98,6 @@
     "description": "Covers advanced object-oriented programming to implement abstract data types (stacks, queues, linked lists, hash tables, binary trees) in Java, including inheritance, searching/sorting algorithms, and basic algorithmic analysis."
   },
   {
-    "courseNumber": "EN.601.454",
-    "name": "Introduction to Augmented Reality",
-    "school": "Johns Hopkins University",
-    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.454",
-    "description": "Introduces the field of Augmented Reality — basic definitions, principles, and applications — and explains how fundamental computer vision concepts apply to AR development, including calibration, tracking, and visualization."
-  },
-  {
     "courseNumber": "CSCI 1133",
     "name": "Introduction to Computing and Programming Concepts",
     "school": "University of Minnesota",
@@ -138,6 +131,13 @@
     "school": "Johns Hopkins University",
     "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.482",
     "description": "Covers deep learning as a tool for data-intensive learning problems — supervised learning, dimensionality reduction, and control — with applications in speech, text, computer vision, medical imaging, and robotics."
+  },
+  {
+    "courseNumber": "EN.601.479",
+    "name": "Machine Learning: Reinforcement Learning",
+    "school": "Johns Hopkins University",
+    "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.479",
+    "description": "Covers both classical reinforcement learning and its modern counterparts behind results from AlphaGo to LLMs: Markov decision processes, dynamic programming, model-based and model-free RL, temporal difference learning, and Monte Carlo methods."
   },
   {
     "courseNumber": "EN.601.468",
