@@ -20,18 +20,16 @@ const categories = [
     badge: "Currently Learning",
     skills: [
       "ROS2", "Isaac Sim", "Kinematics",
-      "Control Systems", "Optimal Control Theory",
-      "Kalman Filter", "Signal Processing",
-      "Perception", "Computer Vision", "Deep Learning",
-      "Reinforcement Learning", "NLP", "VLA",
+      "Optimal Control", "Kalman Filters", "DSP",
+      "Perception", "CV", "NLP", "VLA", "RL", "Deep Learning",
     ],
   },
   {
     title: "Languages & Frameworks",
     color: "#38bdf8",
     skills: [
-      "Python", "C++", "CUDA", "SQL", "Bash / Shell", "Java",
-      "x86 Assembly", "VHDL (learning)", "TypeScript", "Rust (learning)",
+      "Python", "C++", "C", "CUDA", "SQL", "Bash / Shell",
+      "Java", "x86 Assembly", "VHDL (learning)",
     ],
   },
   {
