@@ -82,6 +82,7 @@ const experiences: ExperienceEntry[] = [
     current: false,
   },
   {
+    id: "spinquest-daq",
     role: "Software Developer, Particle Physics DAQ Systems",
     company: "Under Petar Maksimovic",
     link: "https://physics-astronomy.jhu.edu/directory/petar-maksimovic/",
