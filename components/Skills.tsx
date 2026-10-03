@@ -36,8 +36,8 @@ const categories = [
     title: "Systems & Software",
     color: "#f97316",
     skills: [
-      "Scalable Architecture", "Microservices", "Docker",
-      "Git / CI-CD", "Linux", "Parallel Computing", "Performance Engineering",
+      "Scalable Architecture", "Docker", "Git / CI-CD",
+      "Linux", "Parallel Computing", "Performance Engineering",
     ],
   },
   {
