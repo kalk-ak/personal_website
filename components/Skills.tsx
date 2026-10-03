@@ -10,6 +10,7 @@ const categories = [
     skills: [
       "PyTorch", "TensorFlow", "scikit-learn", "Hugging Face",
       "Computer Vision", "NLP", "Reinforcement Learning",
+      "Gymnasium", "Stable-Baselines3",
       "LLM Fine-tuning", "OpenCV", "ONNX", "MLflow",
     ],
   },
@@ -18,8 +19,11 @@ const categories = [
     color: "#7c3aed",
     badge: "Currently Learning",
     skills: [
-      "ROS2", "Control Systems", "Isaac Sim",
-      "Kinematics", "Perception",
+      "ROS2", "Isaac Sim", "Kinematics",
+      "Control Systems", "Optimal Control Theory",
+      "Kalman Filter", "Signal Processing",
+      "Perception", "Computer Vision", "Deep Learning",
+      "Reinforcement Learning", "NLP", "VLA",
     ],
   },
   {
