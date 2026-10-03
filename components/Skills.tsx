@@ -54,7 +54,7 @@ const categories = [
     color: "#fb7185",
     skills: [
       "TCP/IP", "Distributed Systems", "Network Programming",
-      "WebSockets", "Message Queues", "Kubernetes", "AWS / GCP",
+      "WebSockets", "Message Queues", "Kubernetes",
     ],
   },
 ];
