@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -14,7 +16,44 @@ const links = [
   { label: "Contact", href: "#contact" },
 ];
 
+/**
+ * A section link. On the homepage it stays a bare hash anchor so the CSS
+ * smooth scroll handles it; anywhere else it has to be a real `Link` to `/`
+ * plus the hash, which also gets the basePath applied for GitHub Pages.
+ */
+function NavLink({
+  href,
+  onHome,
+  className,
+  onClick,
+  children,
+}: {
+  href: string;
+  onHome: boolean;
+  className?: string;
+  onClick?: () => void;
+  children: ReactNode;
+}) {
+  if (onHome) {
+    return (
+      <a href={href} className={className} onClick={onClick}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={`/${href}`} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  );
+}
+
 export default function Nav() {
+  const pathname = usePathname();
+  // The section links are in-page anchors on the homepage, but have to become
+  // real routes back to it from /projects and the per-project pages.
+  const onHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("");
@@ -26,6 +65,8 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
+    if (!onHome) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -39,7 +80,7 @@ export default function Nav() {
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, []);
+  }, [onHome]);
 
   return (
     <>
@@ -55,21 +96,22 @@ export default function Nav() {
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <a
-            href="#"
+          <Link
+            href="/"
             className="font-mono text-sm font-medium tracking-widest text-[#00f5d4] hover:text-white transition-colors"
           >
             <span className="text-[#64748b]">{"<"}</span>
             KA
             <span className="text-[#64748b]">{" />"}</span>
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-8">
             {links.map((link) => (
               <li key={link.href}>
-                <a
+                <NavLink
                   href={link.href}
+                  onHome={onHome}
                   className={`text-sm font-medium transition-all duration-200 relative py-1 ${
                     active === link.href.replace("#", "")
                       ? "text-[#00f5d4]"
@@ -84,7 +126,7 @@ export default function Nav() {
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -112,13 +154,14 @@ export default function Nav() {
             <ul className="flex flex-col px-6 py-4 gap-4">
               {links.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <NavLink
                     href={link.href}
+                    onHome={onHome}
                     onClick={() => setMenuOpen(false)}
                     className="block text-base font-medium text-[#94a3b8] hover:text-[#00f5d4] transition-colors py-2"
                   >
                     {link.label}
-                  </a>
+                  </NavLink>
                 </li>
               ))}
             </ul>

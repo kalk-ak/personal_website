@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono, Orbitron } from "next/font/google";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -53,7 +55,9 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${orbitron.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-[#0a0a0f] text-[#e2e8f0]">
-        {children}
+        <Nav />
+        <main className="flex flex-col flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
