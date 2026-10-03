@@ -43,6 +43,7 @@ const categories = [
   {
     title: "Databases",
     color: "#a3e635",
+    badge: "Currently Learning",
     skills: [
       "PostgreSQL", "SQLite", "NoSQL", "Vector DBs",
       "Data Pipelines", "Polars", "Apache Arrow", "PyArrow", "Kafka",
