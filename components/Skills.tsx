@@ -28,8 +28,8 @@ const categories = [
     title: "Languages & Frameworks",
     color: "#38bdf8",
     skills: [
-      "Python", "C++", "C", "CUDA", "SQL", "Bash / Shell",
-      "Java", "x86 Assembly", "VHDL (learning)",
+      "Python", "C++", "CUDA", "SQL", "Bash / Shell",
+      "Java", "x86 Assembly",
     ],
   },
   {
