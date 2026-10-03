@@ -59,32 +59,20 @@ export const projects: Project[] = [
     ],
     highlights: [
       {
-        heading: "20 servers, 100M articles",
-        body: "URLs came from Google News and BigQuery's Global News Knowledge Graph. The scraper ran across 20 remote JHU servers and got usable text off about 85% of the pages it tried.",
+        heading: "Most of the job was throwing data away",
+        body: "An article that mentions a ticker is usually not about the company. Scoring each document against a written description of the business cut 100 million articles down to 2 million, so 98 of every 100 got discarded.",
       },
       {
-        heading: "Filtered down to 2M",
-        body: "Each article got a Doc2Vec embedding, scored against a written description of the company it was supposed to be about. Roughly 98 out of every 100 articles did not make it through.",
+        heading: "Published time, not indexed time",
+        body: "A search engine tells you when it found an article, not when it went up. For intraday prediction that gap is the signal, which is why the second scraper had to pull an exact window instead of trusting an index.",
       },
       {
-        heading: "FinBERT, fine-tuned",
-        body: "250 million parameters, later layers unfrozen, final layers swapped for an N-way classification head. Several other language models got the same treatment.",
+        heading: "The big models barely beat a coin flip",
+        body: "A fine-tuned 250 million parameter FinBERT, CatBoost ensembles, and attention-based time series networks all came out high variance and only just ahead of random choice and buy-and-hold S&P 500.",
       },
       {
-        heading: "Features and tree models",
-        body: "Features engineered out of the news for the models that need structured input, then CatBoost ensembled with recurrent LSTMs. This is what the text models got measured against.",
-      },
-      {
-        heading: "Timestamp-bounded scraping",
-        body: "Intraday prediction needs articles bounded by exact times. The second scraper pulled a specific window off the search engines without getting blocked or flagged, so we got what was published between two times instead of whatever was indexed later.",
-      },
-      {
-        heading: "Benchmarks",
-        body: "Decision trees up through attention-based time series networks, on returns for 10 tech stocks, against random choice and buy-and-hold S&P 500.",
-      },
-      {
-        heading: "The agents did better",
-        body: "The single models were high variance and barely beat either baseline. Several agents each taking a different stock market analyzer role and debating the classification worked better. That is the part being explored as a startup.",
+        heading: "What worked was making them argue",
+        body: "Several agents, each given a different stock market analyzer role and left to debate how the classification should land, did better than any of the models we fine-tuned. That is the part being explored as a startup.",
       },
     ],
     tech: ["Python", "FinBERT", "Doc2Vec", "CatBoost", "BiLSTM", "Transformers", "Playwright", "GoLogin", "BigQuery"],
