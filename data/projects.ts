@@ -52,10 +52,10 @@ export const projects: Project[] = [
       "This started as a question: if you could read every financial news article published about a company over the past few weeks, could you predict where its stock was going the next day? My team and I spent a long time answering that, and it pulled us much deeper into data engineering, modeling, and reasoning text model orchestration than any of us expected going in.",
       "The first real problem was collection. We built a scraping pipeline running across 20 remote JHU servers that gathered roughly 100 million financial articles, taking article URLs from Google News and BigQuery's Global News Knowledge Graph and stripping the ads and boilerplate out of the raw HTML.",
       "Almost none of that volume is useful, because an article that mentions a ticker is not necessarily an article about the company. We embedded each document with Doc2Vec and scored it against a text description of the company it was supposed to be about, which cut 100 million articles down to the 2 million that were genuinely relevant.",
-      "From there we came at the prediction problem from two directions. We fine-tuned a 250 million parameter FinBERT and several other language models, replacing their final layers so they predicted returns directly from the article text. In parallel we engineered features out of the news and fed those to models that want structured input instead, ensembled CatBoost and recurrent LSTMs, so the text models had something to be measured against on even footing.",
-      "Then we moved toward higher frequency prediction, which put all the pressure back on the scraper. Intraday signal needs articles bounded by exact timestamps, so we built a much more capable scraper that could query the search engine for a specific window without getting blocked, and actually return what was published between two times rather than whatever happened to be indexed later.",
-      "I benchmarked the forecasting side properly, from decision trees up to attention-based time series networks, across returns for 10 tech stocks. Afterward I pointed the same scraper at crude oil coverage during the US-Iran conflict, on the theory that a sharper and more news-driven market might be easier to call.",
-      "It did not beat a random baseline or the S&P 500. I would rather publish that than bury it. It is the honest result for this class of signal, and getting there taught me more about leakage, baselines, and evaluation discipline than a flattering number would have.",
+      "We then fine-tuned the later layers of a 250 million parameter FinBERT and several other language models, replacing their final layers with our own N-way classification head so they predicted directly from the article text. In parallel we engineered features out of the news and fed those to models that want structured input instead, ensembling CatBoost and recurrent LSTMs, so the text models had something to be measured against on even footing.",
+      "Then we moved toward higher frequency prediction, which put all the pressure back on the scraper. Intraday signal needs articles bounded by exact timestamps, so we built a much more capable invisible scraper that could retrieve information on the backs of powerful search engines for a specific window without getting blocked or flagged, and return what was actually published between two times rather than whatever happened to be indexed later.",
+      "We benchmarked the forecasting side, from decision trees up to attention-based time series networks, across returns for 10 tech stocks. Afterward I pointed the same scraper at crude oil coverage during the US-Iran conflict, on the theory that a sharper and more news-driven market might outperform intuition.",
+      "The results we got for those models were high variance and barely beat the S&P 500 or random choice. What worked better was agentic orchestration: different agents take on roles as different kinds of market analyst, then debate how the classification is going to turn out. That is the direction I am exploring as a startup now.",
     ],
     highlights: [
       {
@@ -68,7 +68,7 @@ export const projects: Project[] = [
       },
       {
         heading: "Fine-tuned language models",
-        body: "A 250 million parameter FinBERT plus several other pretrained models, each with its final layers swapped out so it predicts returns straight from the article text.",
+        body: "A 250 million parameter FinBERT plus several other pretrained models, fine-tuned through their later layers with our own N-way classification head so they predict straight from the article text.",
       },
       {
         heading: "A structured-input path in parallel",
