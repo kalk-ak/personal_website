@@ -137,22 +137,20 @@ export const projects: Project[] = [
     teaser:
       "Machine learning and NLP implemented from scratch, from decision trees and PageRank to n-gram language models, plus Argubots: LLM agents that debate using real argumentation data.",
     overview: [
-      "I do not trust that I understand an algorithm until I have written it without a library doing the interesting part for me. This repository is the result of applying that rule for a couple of years: decision trees, PageRank, n-gram language models, and a pile of other classic methods built up from the math.",
-      "The largest piece in it is Argubots, a set of LLM-based dialogue agents that argue a position using real argumentation structures from Kialo. Different agents use different strategies, and the interesting engineering is not the agents themselves but the evaluation framework around them, which is what lets you say one strategy is actually better than another rather than just reading transcripts and forming a vibe.",
-      "Treat it as a reading room rather than a product. Each subproject is self-contained and meant to be legible.",
+      "I do not trust that I understand an algorithm until I have written it without a library doing the interesting part for me. This repository is the result of applying that rule throughout a couple of years.",
     ],
     highlights: [
       {
         heading: "Built from the math",
-        body: "Classic ML and NLP methods implemented directly instead of called from a library, so the tradeoffs in each one are visible in the code.",
+        body: "Decision trees, PageRank, n-gram language models and a pile of other classic methods, each implemented directly rather than called out of a library.",
       },
       {
         heading: "Argubots",
-        body: "LLM dialogue agents that debate using real Kialo argumentation data, with several distinct strategies to compare against each other.",
+        body: "LLM dialogue agents that argue a position using real argumentation structures from Kialo, with several different strategies going up against each other.",
       },
       {
         heading: "An evaluation harness",
-        body: "A full framework for scoring debate strategies head to head, which is the part that turns a demo into something you can draw a conclusion from.",
+        body: "A framework for scoring the debate strategies head to head, so you can say one is better than another instead of reading transcripts and guessing.",
       },
     ],
     tech: ["Python", "NLP", "LLM Agents"],
