@@ -59,20 +59,20 @@ export const projects: Project[] = [
     ],
     highlights: [
       {
-        heading: "Most of the job was throwing data away",
-        body: "An article that mentions a ticker is usually not about the company. Scoring each document against a written description of the business cut 100 million articles down to 2 million, so 98 of every 100 got discarded.",
+        heading: "Mostly throwing data away",
+        body: "A ticker mention is not coverage. 98 of every 100 articles got discarded.",
       },
       {
-        heading: "Published time, not indexed time",
-        body: "A search engine tells you when it found an article, not when it went up. For intraday prediction that gap is the signal, which is why the second scraper had to pull an exact window instead of trusting an index.",
+        heading: "Publish time, not index time",
+        body: "Search engines tell you when they found an article. Intraday needs when it went up.",
       },
       {
-        heading: "The big models barely beat a coin flip",
-        body: "A fine-tuned 250 million parameter FinBERT, CatBoost ensembles, and attention-based time series networks all came out high variance and only just ahead of random choice and buy-and-hold S&P 500.",
+        heading: "Barely beat a coin flip",
+        body: "FinBERT, CatBoost ensembles, attention time series nets. High variance, barely past random choice.",
       },
       {
-        heading: "What worked was making them argue",
-        body: "Several agents, each given a different stock market analyzer role and left to debate how the classification should land, did better than any of the models we fine-tuned. That is the part being explored as a startup.",
+        heading: "Making them argue worked",
+        body: "Agents in different analyst roles, debating the call, beat every model we fine-tuned.",
       },
     ],
     tech: ["Python", "FinBERT", "Doc2Vec", "CatBoost", "BiLSTM", "Transformers", "Playwright", "GoLogin", "BigQuery"],
@@ -108,19 +108,19 @@ export const projects: Project[] = [
     highlights: [
       {
         heading: "Native, not a script wrapper",
-        body: "A real GTK4 application in C++ rather than a shell script behind a dialog box, so it starts instantly and feels like part of the desktop.",
+        body: "A real C++ and GTK4 application, not a shell script behind a dialog.",
       },
       {
         heading: "GUI and CLI parity",
-        body: "Every control is available from both the window and the command line, which means it works whether you are clicking or writing a Hyprland keybinding.",
+        body: "Every control works from the window and from the command line.",
       },
       {
         heading: "Packaged properly",
-        body: "CMake installable with a documented build, so people on other distributions can get it running without reverse engineering the project layout.",
+        body: "CMake installable with a documented build.",
       },
       {
         heading: "Used by other people",
-        body: "Picked up by the Omarchy and Hyprland community, which means real bug reports from real hardware configurations.",
+        body: "Running across the Omarchy and Hyprland community, on hardware I do not own.",
       },
     ],
     tech: ["C++", "GTK4", "Hyprland", "CMake"],
@@ -142,15 +142,15 @@ export const projects: Project[] = [
     highlights: [
       {
         heading: "Built from the math",
-        body: "Decision trees, PageRank, n-gram language models and a pile of other classic methods, each implemented directly rather than called out of a library.",
+        body: "Decision trees, PageRank, n-gram language models, written directly instead of imported.",
       },
       {
         heading: "Argubots",
-        body: "LLM dialogue agents that argue a position using real argumentation structures from Kialo, with several different strategies going up against each other.",
+        body: "LLM agents arguing a position from real Kialo data, several strategies at once.",
       },
       {
         heading: "An evaluation harness",
-        body: "A framework for scoring the debate strategies head to head, so you can say one is better than another instead of reading transcripts and guessing.",
+        body: "Scores the debate strategies head to head, so the comparison is not a guess.",
       },
     ],
     tech: ["Python", "NLP", "LLM Agents"],
@@ -174,15 +174,15 @@ export const projects: Project[] = [
     highlights: [
       {
         heading: "Configurable cache simulator",
-        body: "Associativity, block size, and eviction policy are all parameters, so the simulator is useful for building intuition rather than just producing one number.",
+        body: "Associativity, block size, and eviction policy are all parameters.",
       },
       {
-        heading: "A chess engine that knows the whole rulebook",
-        body: "Complete rule enforcement in a CLI engine, including the edge cases that are easy to leave out and hard to debug later.",
+        heading: "Chess engine, complete rules",
+        body: "Full rule enforcement, including the edge cases most engines skip.",
       },
       {
         heading: "C against hand-written assembly",
-        body: "The same routine written both ways and measured, which turns compiler optimization from something you assume into something you have checked.",
+        body: "The same routine written both ways, then measured.",
       },
     ],
     tech: ["C++", "C", "x86 Assembly", "CMake"],
@@ -205,15 +205,15 @@ export const projects: Project[] = [
     highlights: [
       {
         heading: "One command to install",
-        body: "No manual file copying or config merging. The install path is a single command, which is the difference between a theme people try and a theme people read about.",
+        body: "No file copying, no config merging.",
       },
       {
-        heading: "Consistent across the whole desktop",
-        body: "Window manager, bar, and terminal all themed together, so there are no surfaces left looking like the default.",
+        heading: "Consistent across the desktop",
+        body: "Window manager, bar, and terminal themed together.",
       },
       {
         heading: "In the community gallery",
-        body: "Carried in the Omarchy community theme gallery, which is where its users actually come from.",
+        body: "Carried in the Omarchy community theme gallery.",
       },
     ],
     tech: ["Hyprland", "Shell", "Omarchy"],
@@ -236,11 +236,11 @@ export const projects: Project[] = [
     highlights: [
       {
         heading: "Breadth on purpose",
-        body: "Calculus, linear algebra, probability, and statistics in one place, because in practice problems do not arrive sorted by which branch of math solves them.",
+        body: "Calculus, linear algebra, probability, and statistics in one place.",
       },
       {
         heading: "Real lab analysis",
-        body: "Physics lab data worked through with the same tools, including the error analysis, which is where statistics stops being abstract.",
+        body: "Physics lab data worked through with the same tools, error analysis included.",
       },
     ],
     tech: ["Python", "Jupyter", "NumPy", "Matplotlib"],
