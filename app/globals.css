@@ -314,3 +314,81 @@ body {
     animation: none;
   }
 }
+
+/* Page transitions (see components/PageTransition.tsx). Going deeper slides
+   the page left, coming back slides it right, and everything else crossfades.
+   The old page leaves fast so it never competes with the new one. */
+::view-transition-old(.nav-forward) {
+  --slide-offset: -48px;
+  animation:
+    140ms ease-in both page-fade reverse,
+    360ms cubic-bezier(0.4, 0, 0.2, 1) both page-slide reverse;
+}
+::view-transition-new(.nav-forward) {
+  --slide-offset: 48px;
+  animation:
+    220ms ease-out 120ms both page-fade,
+    360ms cubic-bezier(0.4, 0, 0.2, 1) both page-slide;
+}
+::view-transition-old(.nav-back) {
+  --slide-offset: 48px;
+  animation:
+    140ms ease-in both page-fade reverse,
+    360ms cubic-bezier(0.4, 0, 0.2, 1) both page-slide reverse;
+}
+::view-transition-new(.nav-back) {
+  --slide-offset: -48px;
+  animation:
+    220ms ease-out 120ms both page-fade,
+    360ms cubic-bezier(0.4, 0, 0.2, 1) both page-slide;
+}
+::view-transition-old(.page-fade) {
+  animation: 160ms ease-in both page-fade reverse;
+}
+::view-transition-new(.page-fade) {
+  animation: 240ms ease-out 100ms both page-fade;
+}
+
+/* A project title morphs from its card into the detail page heading */
+::view-transition-group(.project-title) {
+  animation-duration: 380ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+::view-transition-image-pair(.project-title) {
+  animation-name: via-blur;
+}
+
+/* The nav stays put while the page moves under it */
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+@keyframes page-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes page-slide {
+  from { translate: var(--slide-offset) 0; }
+  to { translate: 0 0; }
+}
+
+@keyframes via-blur {
+  40% { filter: blur(2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

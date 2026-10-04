@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProjectDetail from "@/components/ProjectDetail";
+import PageTransition from "@/components/PageTransition";
 import { projects, getProject, getProjectNeighbors } from "@/data/projects";
 
 type ProjectParams = { slug: string };
@@ -46,5 +47,9 @@ export default async function ProjectPage({
 
   const { prev, next } = getProjectNeighbors(slug);
 
-  return <ProjectDetail project={project} prev={prev} next={next} />;
+  return (
+    <PageTransition>
+      <ProjectDetail project={project} prev={prev} next={next} />
+    </PageTransition>
+  );
 }

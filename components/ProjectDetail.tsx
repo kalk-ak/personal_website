@@ -1,5 +1,6 @@
 "use client";
 
+import { ViewTransition } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -31,27 +32,17 @@ export default function ProjectDetail({ project: p, prev, next }: ProjectDetailP
 
       <div className="max-w-3xl mx-auto px-6 pt-28 pb-20 relative z-10">
         {/* Back out */}
-        <motion.div
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
+        <Link
+          href="/projects"
+          transitionTypes={["nav-back"]}
+          className="inline-flex items-center gap-2 text-xs font-mono text-[#64748b] hover:text-[#00f5d4] transition-colors"
         >
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 text-xs font-mono text-[#64748b] hover:text-[#00f5d4] transition-colors"
-          >
-            <ArrowLeft size={13} />
-            All projects
-          </Link>
-        </motion.div>
+          <ArrowLeft size={13} />
+          All projects
+        </Link>
 
-        {/* Header */}
-        <motion.header
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.05 }}
-          className="mt-8"
-        >
+        {/* Header. No entrance animation: the page transition brings it in. */}
+        <header className="mt-8">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <span
               className="text-[11px] font-mono px-2.5 py-1 rounded"
@@ -73,9 +64,11 @@ export default function ProjectDetail({ project: p, prev, next }: ProjectDetailP
             )}
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-            {p.title}
-          </h1>
+          <ViewTransition name={`project-title-${p.slug}`} share="project-title">
+            <h1 className="w-fit text-3xl md:text-4xl font-bold text-white leading-tight">
+              {p.title}
+            </h1>
+          </ViewTransition>
 
           <p className="mt-4 text-base text-[#94a3b8] leading-relaxed">{p.teaser}</p>
 
@@ -150,7 +143,7 @@ export default function ProjectDetail({ project: p, prev, next }: ProjectDetailP
               </span>
             ))}
           </div>
-        </motion.header>
+        </header>
 
         <div
           className="my-12 h-px"
@@ -158,11 +151,7 @@ export default function ProjectDetail({ project: p, prev, next }: ProjectDetailP
         />
 
         {/* Overview */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-        >
+        <section>
           <h2 className="font-mono text-xs text-[#00f5d4] tracking-widest mb-5">
             {"// THE STORY"}
           </h2>
@@ -173,7 +162,7 @@ export default function ProjectDetail({ project: p, prev, next }: ProjectDetailP
               </p>
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Highlights */}
         {p.highlights.length > 0 && (
@@ -216,6 +205,7 @@ export default function ProjectDetail({ project: p, prev, next }: ProjectDetailP
           >
             <Link
               href={`/#${p.relatedExperienceId}`}
+              transitionTypes={["nav-back"]}
               className="glass-card rounded-xl p-5 flex items-center gap-4 group"
             >
               <Briefcase size={18} className="text-[#7c3aed] shrink-0" />
@@ -235,6 +225,7 @@ export default function ProjectDetail({ project: p, prev, next }: ProjectDetailP
             {prev && (
               <Link
                 href={`/projects/${prev.slug}`}
+                transitionTypes={["nav-back"]}
                 className="glass-card rounded-xl p-4 group"
               >
                 <span className="flex items-center gap-1.5 text-[10px] font-mono text-[#475569] mb-1.5">
@@ -249,6 +240,7 @@ export default function ProjectDetail({ project: p, prev, next }: ProjectDetailP
             {next && (
               <Link
                 href={`/projects/${next.slug}`}
+                transitionTypes={["nav-forward"]}
                 className="glass-card rounded-xl p-4 group sm:text-right"
               >
                 <span className="flex items-center gap-1.5 text-[10px] font-mono text-[#475569] mb-1.5 sm:justify-end">

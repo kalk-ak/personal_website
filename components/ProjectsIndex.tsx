@@ -13,26 +13,16 @@ export default function ProjectsIndex() {
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[rgba(124,58,237,0.06)] blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 pt-28 pb-20 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
+        <Link
+          href="/"
+          transitionTypes={["nav-back"]}
+          className="inline-flex items-center gap-2 text-xs font-mono text-[#64748b] hover:text-[#00f5d4] transition-colors"
         >
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono text-[#64748b] hover:text-[#00f5d4] transition-colors"
-          >
-            <ArrowLeft size={13} />
-            Back home
-          </Link>
-        </motion.div>
+          <ArrowLeft size={13} />
+          Back home
+        </Link>
 
-        <motion.header
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.05 }}
-          className="mt-8 mb-14"
-        >
+        <header className="mt-8 mb-14">
           <p className="font-mono text-sm text-[#00f5d4] tracking-widest mb-3">
             {"// PROJECTS"}
           </p>
@@ -45,11 +35,11 @@ export default function ProjectsIndex() {
             here has its own page with how it was built and what came out of it,
             including the ones where the honest answer was that it did not work.
           </p>
-        </motion.header>
+        </header>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-          {projects.map((p, i) => (
-            <ProjectCard key={p.slug} project={p} index={i} />
+          {projects.map((p) => (
+            <ProjectCard key={p.slug} project={p} />
           ))}
         </div>
 

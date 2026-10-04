@@ -43,8 +43,8 @@ export default function Projects() {
 
         {/* Preview grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-          {preview.map((p, i) => (
-            <ProjectCard key={p.slug} project={p} index={i} />
+          {preview.map((p) => (
+            <ProjectCard key={p.slug} project={p} />
           ))}
         </div>
 
@@ -56,7 +56,7 @@ export default function Projects() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link href="/projects" className="btn-neon px-6 py-2.5 rounded text-sm font-mono">
+          <Link href="/projects" transitionTypes={["nav-forward"]} className="btn-neon px-6 py-2.5 rounded text-sm font-mono">
             <span className="inline-flex items-center gap-2">
               {remaining > 0 ? `All ${projects.length} projects` : "All projects"}
               <ArrowRight size={15} />

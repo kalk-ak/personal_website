@@ -52,6 +52,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      // Keeps the smooth scroll for in-page anchors but jumps instantly to the
+      // top on route changes, so a new page never visibly scrolls up.
+      data-scroll-behavior="smooth"
       className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${orbitron.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-[#0a0a0f] text-[#e2e8f0]">

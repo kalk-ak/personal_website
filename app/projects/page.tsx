@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProjectsIndex from "@/components/ProjectsIndex";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Projects | Kaleb Aklilu",
@@ -8,5 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsIndexPage() {
-  return <ProjectsIndex />;
+  return (
+    <PageTransition>
+      <ProjectsIndex />
+    </PageTransition>
+  );
 }

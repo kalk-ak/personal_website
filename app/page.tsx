@@ -6,6 +6,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Courses from "@/components/Courses";
 import Contact from "@/components/Contact";
+import PageTransition from "@/components/PageTransition";
 
 export default function Home() {
   // Prerendered at build time, so the server HTML and the client's first
@@ -14,7 +15,7 @@ export default function Home() {
   const buildMonth = now.getFullYear() * 12 + now.getMonth();
 
   return (
-    <>
+    <PageTransition>
       <Hero />
       <About />
       <Projects />
@@ -23,6 +24,6 @@ export default function Home() {
       <Tools />
       <Courses />
       <Contact />
-    </>
+    </PageTransition>
   );
 }

@@ -8,6 +8,9 @@ const repoName = "personal_website";
 
 const nextConfig: NextConfig = {
   output: "export",
+  experimental: {
+    viewTransition: true,
+  },
   trailingSlash: true,
   images: {
     unoptimized: true,
