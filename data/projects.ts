@@ -138,9 +138,9 @@ export const projects: Project[] = [
     stats: "Three socket protocols, lock-free UDP workers",
   },
   {
-    slug: "algorithm-forge",
-    title: "The Algorithm Forge",
-    subtitle: "NLP · ML from Scratch",
+    slug: "ml-playground",
+    title: "ML Playground",
+    subtitle: "NLP · From Scratch",
     teaser:
       "Machine learning and NLP implemented from scratch, from decision trees and PageRank to n-gram language models, plus Argubots: LLM agents that debate using real argumentation data.",
     overview: [
