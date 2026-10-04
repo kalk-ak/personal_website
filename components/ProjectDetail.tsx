@@ -30,7 +30,7 @@ export default function ProjectDetail({ project: p, prev, next }: ProjectDetailP
         style={{ background: p.color }}
       />
 
-      <div className="max-w-3xl mx-auto px-6 pt-28 pb-20 relative z-10">
+      <div className="max-w-2xl mx-auto px-6 pt-28 pb-20 relative z-10">
         {/* Back out */}
         <Link
           href="/projects"
