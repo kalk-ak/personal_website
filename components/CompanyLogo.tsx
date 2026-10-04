@@ -20,9 +20,8 @@ function initials(company: string) {
 }
 
 /**
- * Square logo tile. The source images are light monochrome marks on a
- * transparent background, redrawn from each organisation's own artwork so they
- * sit on the dark page instead of punching a white hole in it.
+ * Square logo tile. The marks keep each organisation's own colours, which means
+ * they need the white field they were drawn for, the way LinkedIn renders them.
  */
 export default function CompanyLogo({ src, company, size = 40 }: CompanyLogoProps) {
   if (!src) {
@@ -40,7 +39,7 @@ export default function CompanyLogo({ src, company, size = 40 }: CompanyLogoProp
   return (
     <div
       style={{ width: size, height: size }}
-      className="shrink-0 rounded-lg overflow-hidden bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] p-1.5"
+      className="shrink-0 rounded-lg overflow-hidden bg-white border border-[rgba(255,255,255,0.12)]"
     >
       {/* images.unoptimized is on for the static export, so this emits a plain img */}
       <Image
