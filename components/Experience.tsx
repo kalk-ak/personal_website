@@ -161,9 +161,9 @@ const experiences: ExperienceEntry[] = [
     link: "https://www.kelloggsquareparkingramp.com/",
     repoLink: "https://github.com/kalk-ak/Catch-Parking-Violators",
     location: "Minneapolis, Minnesota, United States",
-    period: "Oct 2025 to Nov 2025",
+    period: "Oct 2025 to Jan 2026",
     start: "2025-10",
-    end: "2025-11",
+    end: "2026-01",
     type: "Freelance Contract",
     description:
       "Built an automated tool from scratch that catches users abusing a flaw in the system, sharing one account across multiple cars parked at once. Optimized it with an advanced greedy algorithm, a sorted two pointer scan, so it scales to millions of transactions in a reasonable amount of time. It also flags plate to account mismatches and writes a violation report so management can see who's abusing the system.",
@@ -187,7 +187,7 @@ const experiences: ExperienceEntry[] = [
   },
 ];
 
-export default function Experience() {
+export default function Experience({ buildMonth }: { buildMonth: number }) {
   const timelineRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: timelineRef,
@@ -218,6 +218,7 @@ export default function Experience() {
 
         {/* Roles on a shared time axis, to show the overlap the list hides */}
         <ExperienceChart
+          buildMonth={buildMonth}
           roles={experiences.map((e) => ({
             role: e.role,
             company: e.company,

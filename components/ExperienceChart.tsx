@@ -1,7 +1,14 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { motion } from "framer-motion";
 import CompanyLogo from "@/components/CompanyLogo";
+
+/** The axis never shows anything earlier than this, whatever the data says. */
+const AXIS_START = "2025-01";
+
+/** The current month never changes mid-session, so there is nothing to watch. */
+const noSubscribe = () => () => {};
 
 export interface ChartRole {
   role: string;
@@ -34,8 +41,17 @@ function label(months: number) {
  * list below reads as one thing after another, and this shows how much of it
  * was running at the same time.
  */
-export default function ExperienceChart({ roles }: { roles: ChartRole[] }) {
-  const now = monthsNow();
+export default function ExperienceChart({
+  roles,
+  buildMonth,
+}: {
+  roles: ChartRole[];
+  buildMonth: number;
+}) {
+  // The server snapshot is the month this was prerendered in, so hydration
+  // matches; the client snapshot is the visitor's actual month. That is what
+  // keeps the chart current as time passes, with no rebuild.
+  const now = useSyncExternalStore(noSubscribe, monthsNow, () => buildMonth);
 
   const spans = roles.map((r) => ({
     ...r,
@@ -45,8 +61,8 @@ export default function ExperienceChart({ roles }: { roles: ChartRole[] }) {
 
   const min = Math.min(...spans.map((s) => s.from));
   const max = Math.max(now, ...spans.map((s) => s.to));
-  // A month of breathing room at each end so nothing touches the border.
-  const from = min - 1;
+  const from = toMonths(AXIS_START);
+  // A month of breathing room on the right so nothing touches the border.
   const total = max + 1 - from;
 
   const pct = (m: number) => ((m - from) / total) * 100;
@@ -62,7 +78,7 @@ export default function ExperienceChart({ roles }: { roles: ChartRole[] }) {
 
   // How many ran at once, which is the number the chart exists to show.
   let peak = 0;
-  for (let m = min; m <= max; m++) {
+  for (let m = Math.max(min, from); m <= max; m++) {
     const n = spans.filter((s) => s.from <= m && m <= s.to).length;
     if (n > peak) peak = n;
   }
@@ -103,7 +119,10 @@ export default function ExperienceChart({ roles }: { roles: ChartRole[] }) {
 
         <div className="relative space-y-1.5">
           {ordered.map((s, i) => {
-            const left = pct(s.from);
+            // A role that predates the axis is drawn from the edge, with a
+            // square left end so it reads as "continues before this".
+            const clipped = s.from < from;
+            const left = pct(Math.max(s.from, from));
             const width = Math.max(pct(s.to) - left, 1.5);
             return (
               <div key={`${s.role}-${s.company}`} className="group relative h-7">
@@ -113,13 +132,16 @@ export default function ExperienceChart({ roles }: { roles: ChartRole[] }) {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.15 + i * 0.06, ease: "easeOut" }}
                   style={{ left: `${left}%`, width: `${width}%`, transformOrigin: "left" }}
-                  className={`absolute top-1 h-5 rounded-full flex items-center ${
+                  className={`absolute top-1 h-5 flex items-center ${
+                    clipped ? "rounded-r-full" : "rounded-full"
+                  } ${
                     s.current
                       ? "bg-[rgba(0,245,212,0.22)] border border-[rgba(0,245,212,0.5)]"
                       : "bg-[rgba(124,58,237,0.18)] border border-[rgba(124,58,237,0.4)]"
                   }`}
                 >
                   <span className="pl-2 pr-2 text-[10px] font-mono truncate text-[#cbd5e1]">
+                    {clipped && <span className="text-[#64748b]">&lsaquo; </span>}
                     {s.company.replace(/^Under\s+/i, "")}
                   </span>
                 </motion.div>
