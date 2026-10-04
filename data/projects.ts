@@ -138,6 +138,42 @@ export const projects: Project[] = [
     stats: "Three socket protocols, lock-free UDP workers",
   },
   {
+    slug: "omarchy-display-control-center",
+    title: "Omarchy Display Control Center",
+    subtitle: "Linux Tooling · C++ / GTK4",
+    teaser:
+      "A native C++ and GTK4 utility for brightness, night light, and screen rotation on Hyprland based Linux desktops, with a matching CLI.",
+    overview: [
+      "Hyprland gives you hyprctl and hyprsunset for display control. Both are powerful and neither is pleasant for the things you do every day. Changing brightness or turning on a warmer color temperature meant remembering flags.",
+      "So I wrapped them. It is a native GTK4 application in C++ that exposes brightness, night light temperature, and screen rotation as real controls, with a CLI for the same operations when you would rather bind something to a key.",
+      "It is also the project of mine that other people actually use. Bug reports from strangers running hardware I do not own are a different kind of pressure than a class project.",
+    ],
+    highlights: [
+      {
+        heading: "Native, not a script wrapper",
+        body: "A real C++ and GTK4 application, not a shell script behind a dialog.",
+      },
+      {
+        heading: "GUI and CLI parity",
+        body: "Every control works from the window and from the command line.",
+      },
+      {
+        heading: "Packaged properly",
+        body: "CMake installable with a documented build.",
+      },
+      {
+        heading: "Used by other people",
+        body: "Running across the Omarchy and Hyprland community, on hardware I do not own.",
+      },
+    ],
+    tech: ["C++", "GTK4", "Hyprland", "CMake"],
+    github: "https://github.com/kalk-ak/omarchy-display-control-center",
+    live: null,
+    featured: true,
+    color: "#fbbf24",
+    stats: "Native GTK4 app, CMake installable",
+  },
+  {
     slug: "ml-playground",
     title: "ML Playground",
     subtitle: "NLP · From Scratch",
