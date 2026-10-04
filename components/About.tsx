@@ -63,7 +63,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 const highlights = [
   {
     icon: Brain,
-    text: "Fine-tuned a 250 million parameter FinBERT, then benchmarked it against CatBoost, LSTMs and attention time series models",
+    text: "Extensive experience fine-tuning general purpose models to hit a specific goal, including a 250 million parameter FinBERT and several other language models",
   },
   {
     icon: Cpu,
@@ -75,7 +75,7 @@ const highlights = [
   },
   {
     icon: Database,
-    text: "Built the scraping pipeline that collected 100 million news articles across 20 servers",
+    text: "Data engineering and large scale data processing, including distributed scraping pipelines that collected 100 million articles across 20 servers",
   },
   {
     icon: GraduationCap,
