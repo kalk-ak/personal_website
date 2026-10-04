@@ -200,7 +200,7 @@ export default function Experience({ buildMonth }: { buildMonth: number }) {
       {/* Decorative gradient */}
       <div className="absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-transparent via-[rgba(0,245,212,0.15)] to-transparent pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -239,7 +239,10 @@ export default function Experience({ buildMonth }: { buildMonth: number }) {
             style={{ scaleY: lineProgress }}
           />
 
-          <div className="space-y-12">
+          {/* On desktop each card spans two grid rows and the columns alternate,
+              so every card starts halfway down the one before it instead of
+              leaving a card-sized hole on the other side of the line. */}
+          <div className="space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-8">
             {experiences.map((exp, i) => {
               const isLeft = i % 2 === 0;
               return (
@@ -249,13 +252,20 @@ export default function Experience({ buildMonth }: { buildMonth: number }) {
                   initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className={`relative flex items-start gap-6 md:gap-0 ${
-                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
+                  transition={{ duration: 0.6 }}
+                  className={`relative flex items-start gap-6 md:block ${
+                    isLeft ? "md:col-start-1" : "md:col-start-2"
                   }`}
+                  style={{ gridRow: `${i + 1} / span 2` }}
                 >
-                  {/* Timeline dot */}
-                  <div className="absolute left-4 md:left-1/2 top-6 md:-translate-x-1/2 z-10">
+                  {/* Timeline dot, centered on the line in the gap between columns */}
+                  <div
+                    className={`absolute left-4 top-6 z-10 ${
+                      isLeft
+                        ? "md:left-auto md:-right-8 md:translate-x-1/2"
+                        : "md:-left-8 md:-translate-x-1/2"
+                    }`}
+                  >
                     <div
                       className={`w-3 h-3 rounded-full border-2 ${
                         exp.current
@@ -266,11 +276,7 @@ export default function Experience({ buildMonth }: { buildMonth: number }) {
                   </div>
 
                   {/* Content card */}
-                  <div
-                    className={`ml-12 md:ml-0 w-full md:w-[calc(50%-32px)] ${
-                      isLeft ? "md:pr-8" : "md:pl-8"
-                    }`}
-                  >
+                  <div className="ml-12 md:ml-0 w-full">
                     <div className="glass-card rounded-2xl p-6 group">
                       {/* Header */}
                       <div className="flex items-start justify-between gap-4 mb-3">
