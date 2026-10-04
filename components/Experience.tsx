@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { MapPin, ExternalLink, FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import FadeSection from "@/components/FadeSection";
+import CompanyLogo from "@/components/CompanyLogo";
+import ExperienceChart from "@/components/ExperienceChart";
 
 interface DocLink {
   label: string;
@@ -19,6 +21,12 @@ interface ExperienceEntry {
   link: string;
   location: string;
   period: string;
+  /** Year-month the role began, for the overlap chart. */
+  start: string;
+  /** Year-month it ended, or null while ongoing. */
+  end: string | null;
+  /** Square logo under public/logos. Falls back to initials when absent. */
+  logo?: string;
   type: string;
   description: ReactNode;
   tech: string[];
@@ -34,6 +42,9 @@ const experiences: ExperienceEntry[] = [
     link: "https://engineering.jhu.edu/",
     location: "Baltimore, Maryland, United States",
     period: "Aug 2026 to Present",
+    start: "2026-08",
+    end: null,
+    logo: "/logos/johns-hopkins.png",
     type: "Part-time",
     description:
       "Guide undergraduate and graduate students through the fundamentals of AI and machine learning: supervised and unsupervised learning, neural network design, computer vision, NLP, and reinforcement learning. Run discussion sections and office hours, and grade assignments, projects, and exams.",
@@ -46,6 +57,9 @@ const experiences: ExperienceEntry[] = [
     link: "https://www.lockheedmartin.com/",
     location: "Orlando, Florida, United States",
     period: "May 2026 to Aug 2026",
+    start: "2026-05",
+    end: "2026-08",
+    logo: "/logos/lockheed-martin.png",
     type: "Internship",
     description:
       "Using control theory, reinforcement learning, and game theory to solve guidance and navigation problems for autonomous systems.",
@@ -58,6 +72,9 @@ const experiences: ExperienceEntry[] = [
     link: "https://www.nsbe.org/",
     location: "Baltimore, Maryland, United States",
     period: "May 2026 to Present",
+    start: "2026-05",
+    end: null,
+    logo: "/logos/nsbe.png",
     type: "Part-time",
     description:
       "Mentor high school students who want to go into engineering, helping them with college applications, academic prep, and the path into top programs. Gather what members of the local chapter care about and bring it to regional and national senate meetings.",
@@ -71,6 +88,9 @@ const experiences: ExperienceEntry[] = [
     link: "https://www.siam.org/publications/siam-news/authors/anthony-j-kearsley/?_page=1&keywords=&_limit=10&authorPersonKey=f253e6d3-b213-4185-9265-b0df853bd108",
     location: "Baltimore, Maryland, United States",
     period: "Jan 2026 to June 2026",
+    start: "2026-01",
+    end: "2026-06",
+    logo: "/logos/johns-hopkins.png",
     type: "Academic Capstone",
     description:
       "Built an automated scraper (85% success rate) that gathered over 2 million financial news articles from Google News and BigQuery's Global News Knowledge Graph, stripping ads and boilerplate from the raw HTML. Embedded the articles with Doc2Vec and filtered them with a similarity function to keep only the relevant ones. Fine-tuned a 250 million parameter FinBERT model and a few others, replacing their final layers to predict from the news text data. Benchmarked models from decision trees to attention-based time series networks forecasting returns for 10 tech stocks, then adapted the scraper, with rotating proxies, fingerprint-randomized profiles, and automated CAPTCHA solving, to forecast crude oil prices during the US-Iran conflict. Struggled to beat a random baseline or the S&P 500, but learned a lot.",
@@ -96,6 +116,9 @@ const experiences: ExperienceEntry[] = [
     ],
     location: "Baltimore, Maryland, United States",
     period: "Nov 2025 to Aug 2026",
+    start: "2025-11",
+    end: "2026-08",
+    logo: "/logos/johns-hopkins.png",
     type: "Research",
     description: (
       <>
@@ -123,6 +146,9 @@ const experiences: ExperienceEntry[] = [
     link: "https://engineering.jhu.edu/",
     location: "Baltimore, Maryland, United States",
     period: "Jan 2026 to Present",
+    start: "2026-01",
+    end: null,
+    logo: "/logos/johns-hopkins.png",
     type: "Part-time",
     description:
       "Lead discussion and review sessions to help students understand electromagnetism and modern physics. Hold office hours for one on one support, exam review sessions, and homework prep.",
@@ -136,6 +162,8 @@ const experiences: ExperienceEntry[] = [
     repoLink: "https://github.com/kalk-ak/Catch-Parking-Violators",
     location: "Minneapolis, Minnesota, United States",
     period: "Oct 2025 to Nov 2025",
+    start: "2025-10",
+    end: "2025-11",
     type: "Freelance Contract",
     description:
       "Built an automated tool from scratch that catches users abusing a flaw in the system, sharing one account across multiple cars parked at once. Optimized it with an advanced greedy algorithm, a sorted two pointer scan, so it scales to millions of transactions in a reasonable amount of time. It also flags plate to account mismatches and writes a violation report so management can see who's abusing the system.",
@@ -148,6 +176,9 @@ const experiences: ExperienceEntry[] = [
     link: "https://www.teachforamerica.org/",
     location: "Remote",
     period: "Sep 2024 to May 2026",
+    start: "2024-09",
+    end: "2026-05",
+    logo: "/logos/teach-for-america.png",
     type: "Part-time",
     description:
       "Provided virtual, small group tutoring in mathematics, breaking down difficult math and physics concepts into manageable steps and adapting my teaching style to fit each student's needs.",
@@ -184,6 +215,18 @@ export default function Experience() {
             <span className="text-gradient-cyan">Worked</span>
           </h2>
         </motion.div>
+
+        {/* Roles on a shared time axis, to show the overlap the list hides */}
+        <ExperienceChart
+          roles={experiences.map((e) => ({
+            role: e.role,
+            company: e.company,
+            start: e.start,
+            end: e.end,
+            current: e.current,
+            logo: e.logo,
+          }))}
+        />
 
         {/* Timeline */}
         <div className="relative" ref={timelineRef}>
@@ -230,7 +273,9 @@ export default function Experience() {
                     <div className="glass-card rounded-2xl p-6 group">
                       {/* Header */}
                       <div className="flex items-start justify-between gap-4 mb-3">
-                        <div>
+                        <div className="flex items-start gap-3 min-w-0">
+                          <CompanyLogo src={exp.logo} company={exp.company} />
+                          <div className="min-w-0">
                           <div className="flex items-center gap-2 mb-1">
                             {exp.current && (
                               <span className="inline-block px-2 py-0.5 text-[10px] font-mono rounded bg-[rgba(0,245,212,0.1)] text-[#00f5d4] border border-[rgba(0,245,212,0.2)]">
@@ -253,6 +298,7 @@ export default function Experience() {
                             {exp.company}
                             <ExternalLink size={11} />
                           </a>
+                          </div>
                         </div>
                       </div>
 
