@@ -181,7 +181,7 @@ export default function Experience() {
           <p className="font-mono text-sm text-[#00f5d4] tracking-widest mb-3">02 // EXPERIENCE</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Where I&apos;ve{" "}
-            <span className="text-gradient-cyan">Built Things</span>
+            <span className="text-gradient-cyan">Worked</span>
           </h2>
         </motion.div>
 
