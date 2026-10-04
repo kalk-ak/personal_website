@@ -56,7 +56,14 @@ export default function Nav() {
   const onHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState("");
+  const [sectionInView, setSectionInView] = useState("");
+  // Off the homepage there's no scroll spy, so light up the section the
+  // current page belongs to instead.
+  const active = onHome
+    ? sectionInView
+    : pathname.startsWith("/projects")
+      ? "projects"
+      : "";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -70,7 +77,7 @@ export default function Nav() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
+          if (e.isIntersecting) setSectionInView(e.target.id);
         });
       },
       { rootMargin: "-40% 0px -55% 0px" }
