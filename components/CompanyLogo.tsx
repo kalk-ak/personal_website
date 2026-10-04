@@ -20,9 +20,9 @@ function initials(company: string) {
 }
 
 /**
- * Square logo tile. The source images are flattened onto white on purpose:
- * several of these marks are dark artwork that would disappear against the
- * page background.
+ * Square logo tile. The source images are light monochrome marks on a
+ * transparent background, redrawn from each organisation's own artwork so they
+ * sit on the dark page instead of punching a white hole in it.
  */
 export default function CompanyLogo({ src, company, size = 40 }: CompanyLogoProps) {
   if (!src) {
@@ -30,7 +30,7 @@ export default function CompanyLogo({ src, company, size = 40 }: CompanyLogoProp
       <div
         aria-hidden
         style={{ width: size, height: size }}
-        className="shrink-0 rounded-lg flex items-center justify-center bg-[rgba(0,245,212,0.08)] border border-[rgba(0,245,212,0.2)] font-mono text-xs font-semibold text-[#00f5d4]"
+        className="shrink-0 rounded-lg flex items-center justify-center bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] font-mono text-xs font-semibold text-[#cbd5e1]"
       >
         {initials(company)}
       </div>
@@ -40,7 +40,7 @@ export default function CompanyLogo({ src, company, size = 40 }: CompanyLogoProp
   return (
     <div
       style={{ width: size, height: size }}
-      className="shrink-0 rounded-lg overflow-hidden bg-white border border-[rgba(255,255,255,0.1)] p-1"
+      className="shrink-0 rounded-lg overflow-hidden bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] p-1.5"
     >
       {/* images.unoptimized is on for the static export, so this emits a plain img */}
       <Image
