@@ -1,9 +1,27 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
 import { Brain, Cpu, Database, GraduationCap, Terminal } from "lucide-react";
 import FadeSection from "@/components/FadeSection";
+
+/**
+ * The only link style used in the bio. Cyan plus an underline means clickable;
+ * plain white semibold is emphasis. Keeping those two apart is the whole point,
+ * so don't colour a non-link cyan.
+ */
+function ExtLink({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#00f5d4] underline underline-offset-2 decoration-[rgba(0,245,212,0.45)] hover:decoration-[#00f5d4] hover:text-white transition-colors"
+    >
+      {children}
+    </a>
+  );
+}
 
 const stats = [
   { value: 100, suffix: "M+", label: "Articles Scraped" },
@@ -190,48 +208,42 @@ export default function About() {
             <p className="text-[#94a3b8] text-base md:text-lg leading-relaxed">
               I&apos;m <span className="text-white font-semibold">Kaleb</span>{" "}
               <span aria-label="waving hand">👋🏾</span>, a Computer Science student at{" "}
-              <span className="text-white font-semibold">Johns Hopkins University</span>. I&apos;m
-              minoring in <span className="text-[#00f5d4]">Robotics</span>,{" "}
-              <span className="text-[#00f5d4]">Computer-Integrated Surgery</span>, and{" "}
-              <span className="text-[#00f5d4]">Entrepreneurship & Management</span>.
+              <span className="text-white font-semibold">Johns Hopkins University</span>,
+              minoring in{" "}
+              <ExtLink href="https://lcsr.jhu.edu/education/undergraduate-minors/robotics-minor/">
+                Robotics
+              </ExtLink>
+              ,{" "}
+              <ExtLink href="https://lcsr.jhu.edu/education/undergraduate-minors/computer-integrated-surgery-minor/">
+                Computer-Integrated Surgery
+              </ExtLink>
+              , and{" "}
+              <ExtLink href="https://engineering.jhu.edu/cle/academics/undergraduate-studies/entrepreneurship-and-management-minor/">
+                Entrepreneurship &amp; Management
+              </ExtLink>
+              . I&apos;m doing it as an accelerated combined bachelor&apos;s and
+              master&apos;s in <span className="text-white font-semibold">Data Science</span>{" "}
+              and <span className="text-white font-semibold">Computer Science</span>, all in
+              four years, graduating{" "}
+              <span className="text-white font-semibold">May 2028</span>.
             </p>
             <p className="text-[#94a3b8] text-base leading-relaxed">
-              I&apos;m also working through an accelerated combined Master&apos;s in{" "}
-              <span className="text-white font-semibold">Data Science</span> and{" "}
-              <span className="text-white font-semibold">Computer Science</span>, and
-              I&apos;m aiming to finish the whole thing, bachelor&apos;s and master&apos;s
-              together, in four years. On my Computer Science Master&apos;s I&apos;m focused
-              on{" "}
-              <span className="text-[#00f5d4]">Human Language Technology</span>, and on my
-              Data Science Master&apos;s I&apos;m building{" "}
-              <span className="text-[#00f5d4]">
-                scalable, reliable machine learning, deep learning, and reinforcement learning
-                systems
-              </span>
-              . It&apos;s a lot to juggle, but honestly, I just like{" "}
-              <a
-                href="https://www.tiktok.com/@thetysontheory/video/7519567810939473166"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#00f5d4] underline underline-offset-2 hover:text-white transition-colors"
-              >
+              On the Computer Science side I&apos;m focused on{" "}
+              <ExtLink href="https://www.clsp.jhu.edu/">Human Language Technology</ExtLink>. On
+              the Data Science side I&apos;m building scalable, reliable machine learning, deep
+              learning, and reinforcement learning systems. It&apos;s a lot to juggle, but I
+              just like{" "}
+              <ExtLink href="https://www.tiktok.com/@thetysontheory/video/7519567810939473166">
                 challenging
-              </a>{" "}
-              myself. Learning new things and getting better at what I do is something I
-              genuinely enjoy.
+              </ExtLink>{" "}
+              myself.
             </p>
             <p className="text-[#94a3b8] text-base leading-relaxed">
               I started building at 15, running a small startup with a friend, and never
-              really stopped. I like to build and create more than I consume, which is
-              probably why I love{" "}
-              <span className="text-[#00f5d4]">science</span> and{" "}
-              <span className="text-[#00f5d4]">technology</span>.
-            </p>
-            <p className="text-[#94a3b8] text-base leading-relaxed">
-              Lately I&apos;ve been all in on{" "}
-              <span className="text-white font-semibold">Embodied AI</span>, VLAs
-              especially. I think it&apos;s going to be one of the next big leaps forward,
-              and I want to be one of the people who helped build it.
+              really stopped. Lately I&apos;ve been all in on{" "}
+              <span className="text-white font-semibold">Embodied AI</span>, VLAs especially.
+              I think it&apos;s going to be one of the next big leaps forward, and I want to
+              be one of the people who helped build it.
             </p>
 
             {/* Terminal-style code block: types itself out once it's on screen */}
