@@ -60,7 +60,7 @@ export default function Contact() {
             <span className="text-gradient-cyan">Something</span>
           </h2>
           <p className="text-[#64748b] text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Whether it&apos;s a new role, a collaboration, or just a conversation
+            Whether it&apos;s a collaboration, a question, or just a conversation
             about the future of Embodied AI, I&apos;m always open.
           </p>
         </motion.div>
@@ -80,15 +80,15 @@ export default function Contact() {
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
                 <MessageSquare size={16} className="text-[#00f5d4]" />
-                <span className="text-sm font-mono text-[#00f5d4] tracking-wider">OPEN TO OPPORTUNITIES</span>
+                <span className="text-sm font-mono text-[#00f5d4] tracking-wider">GET IN TOUCH</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                Available for{" "}
-                <span className="text-gradient-cyan">Hire</span>
+                Contact{" "}
+                <span className="text-gradient-cyan">Me</span>
               </h3>
               <p className="text-[#64748b] text-sm max-w-md">
-                Seeking roles in ML Engineering, Robotics, or Embodied AI. Open to
-                full-time positions, research collaborations, and contract work.
+                Happy to talk about ML Engineering, Robotics, or Embodied AI, whether
+                that is a project, a collaboration, or just a question.
               </p>
             </div>
 

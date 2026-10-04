@@ -216,7 +216,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 mb-10 px-4 py-1.5 rounded-full border border-[rgba(0,245,212,0.2)] bg-[rgba(0,245,212,0.04)] text-xs font-mono text-[#00f5d4]"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#00f5d4] animate-pulse" />
-          Available for Opportunities
+          Open to connecting
         </motion.div>
 
         {/* Name */}
