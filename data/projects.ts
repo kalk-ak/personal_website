@@ -138,6 +138,36 @@ export const projects: Project[] = [
     stats: "Three socket protocols, lock-free UDP workers",
   },
   {
+    slug: "ml-playground",
+    title: "ML Playground",
+    subtitle: "NLP · From Scratch",
+    teaser:
+      "Machine learning and NLP implemented from scratch, from decision trees and PageRank to n-gram language models, plus Argubots: LLM agents that debate using real argumentation data.",
+    overview: [
+      "I do not trust that I understand an algorithm until I have written it without a library doing the interesting part for me. This repository is the result of applying that rule throughout a couple of years.",
+    ],
+    highlights: [
+      {
+        heading: "Built from the math",
+        body: "Decision trees, PageRank, n-gram language models, written directly instead of imported.",
+      },
+      {
+        heading: "Argubots",
+        body: "LLM agents arguing a position from real Kialo data, several strategies at once.",
+      },
+      {
+        heading: "An evaluation harness",
+        body: "Scores the debate strategies head to head, so the comparison is not a guess.",
+      },
+    ],
+    tech: ["Python", "NLP", "LLM Agents"],
+    github: "https://github.com/kalk-ak/ml-playground",
+    live: null,
+    featured: true,
+    color: "#f97316",
+    stats: "Classic ML, NLP, and LLM agents in one repo",
+  },
+  {
     slug: "omarchy-display-control-center",
     title: "Omarchy Display Control Center",
     subtitle: "Linux Tooling · C++ / GTK4",
@@ -169,39 +199,9 @@ export const projects: Project[] = [
     tech: ["C++", "GTK4", "Hyprland", "CMake"],
     github: "https://github.com/kalk-ak/omarchy-display-control-center",
     live: null,
-    featured: true,
+    featured: false,
     color: "#fbbf24",
     stats: "Native GTK4 app, CMake installable",
-  },
-  {
-    slug: "ml-playground",
-    title: "ML Playground",
-    subtitle: "NLP · From Scratch",
-    teaser:
-      "Machine learning and NLP implemented from scratch, from decision trees and PageRank to n-gram language models, plus Argubots: LLM agents that debate using real argumentation data.",
-    overview: [
-      "I do not trust that I understand an algorithm until I have written it without a library doing the interesting part for me. This repository is the result of applying that rule throughout a couple of years.",
-    ],
-    highlights: [
-      {
-        heading: "Built from the math",
-        body: "Decision trees, PageRank, n-gram language models, written directly instead of imported.",
-      },
-      {
-        heading: "Argubots",
-        body: "LLM agents arguing a position from real Kialo data, several strategies at once.",
-      },
-      {
-        heading: "An evaluation harness",
-        body: "Scores the debate strategies head to head, so the comparison is not a guess.",
-      },
-    ],
-    tech: ["Python", "NLP", "LLM Agents"],
-    github: "https://github.com/kalk-ak/ml-playground",
-    live: null,
-    featured: false,
-    color: "#f97316",
-    stats: "Classic ML, NLP, and LLM agents in one repo",
   },
   {
     slug: "systems-playground",
