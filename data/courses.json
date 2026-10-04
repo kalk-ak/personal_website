@@ -130,7 +130,7 @@
     "name": "Machine Learning: Deep Learning",
     "school": "Johns Hopkins University",
     "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.482",
-    "description": "Covers deep learning as a tool for data-intensive learning problems — supervised learning, dimensionality reduction, and control — with applications in speech, text, computer vision, medical imaging, and robotics."
+    "description": "Covers deep learning as a tool for data-intensive learning problems (supervised learning, dimensionality reduction, and control), with applications in speech, text, computer vision, medical imaging, and robotics."
   },
   {
     "courseNumber": "EN.601.479",
@@ -179,14 +179,14 @@
     "name": "Parallel Computing & Performance Engineering",
     "school": "Johns Hopkins University",
     "link": "https://e-catalogue.jhu.edu/search/?P=EN.601.420",
-    "description": "Studies parallelism in data science — instruction-level parallelism, shared-memory multicore computing, distributed computing, and data-parallel frameworks (Dask, Spark, Ray) — drawing examples from data analytics and machine learning."
+    "description": "Studies parallelism in data science, from instruction-level parallelism and shared-memory multicore computing to distributed computing and data-parallel frameworks like Dask, Spark, and Ray, drawing examples from data analytics and machine learning."
   },
   {
     "courseNumber": "STAT 3301",
     "name": "Regression and Statistical Computing",
     "school": "University of Minnesota",
     "link": "https://umtc.catalog.prod.coursedog.com/courses/8190581",
-    "description": "A second statistics course teaching students to analyze data using multiple linear regression — inference, diagnostics, validation, transformations, and model selection — and to design Monte Carlo simulation studies."
+    "description": "A second statistics course teaching students to analyze data using multiple linear regression (inference, diagnostics, validation, transformations, and model selection) and to design Monte Carlo simulation studies."
   },
   {
     "courseNumber": "EN.553.402",
