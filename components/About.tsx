@@ -25,7 +25,8 @@ function ExtLink({ href, children }: { href: string; children: ReactNode }) {
 
 const stats = [
   { value: 100, suffix: "M+", label: "Articles Scraped" },
-  { value: 250, suffix: "M", label: "Params Fine-Tuned" },
+  { value: 250, suffix: "M+", label: "Params Fine-Tuned (FinBERT)" },
+  { value: 6, suffix: "+", label: "Years Building & Learning" },
   { value: 22, suffix: "", label: "Public Repos" },
 ];
 
@@ -259,7 +260,7 @@ export default function About() {
             className="space-y-8"
           >
             {/* Stats grid */}
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-3">
               {stats.map((s, i) => (
                 <motion.div
                   key={s.label}
