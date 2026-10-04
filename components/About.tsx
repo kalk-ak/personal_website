@@ -2,13 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Brain, Cpu, Database, Network, Terminal } from "lucide-react";
+import { Brain, Cpu, Database, GraduationCap, Terminal } from "lucide-react";
 import FadeSection from "@/components/FadeSection";
 
 const stats = [
-  { value: 6, suffix: "+", label: "Years Building" },
-  { value: 20, suffix: "+", label: "Projects Shipped" },
-  { value: 3, suffix: "+", label: "Research Areas" },
+  { value: 100, suffix: "M+", label: "Articles Scraped" },
+  { value: 250, suffix: "M", label: "Params Fine-Tuned" },
+  { value: 22, suffix: "", label: "Public Repos" },
 ];
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
@@ -43,11 +43,26 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 }
 
 const highlights = [
-  { icon: Brain, text: "Deep expertise in ML algorithms, neural architectures, and LLM fine-tuning" },
-  { icon: Cpu, text: "Hands-on robotics: ROS2, SLAM, motion planning & sensor fusion" },
-  { icon: Terminal, text: "Scalable backend systems, CLI tooling, and developer infrastructure" },
-  { icon: Database, text: "Production databases and high-performance data pipelines" },
-  { icon: Network, text: "Computer networks, distributed systems, and TCP/IP internals" },
+  {
+    icon: Brain,
+    text: "Fine-tuned a 250 million parameter FinBERT, then benchmarked it against CatBoost, LSTMs and attention time series models",
+  },
+  {
+    icon: Cpu,
+    text: "Worked on optimal control, reinforcement learning and reasoning models for autonomous guidance and navigation at Lockheed Martin",
+  },
+  {
+    icon: Terminal,
+    text: "Wrote the multi-threaded DAQ server that pulls spill data off FPGA boards for the SpinQuest experiment at Fermilab",
+  },
+  {
+    icon: Database,
+    text: "Built the scraping pipeline that collected 100 million news articles across 20 servers",
+  },
+  {
+    icon: GraduationCap,
+    text: "Assist two courses at Hopkins right now, Artificial Intelligence and Physics 2",
+  },
 ];
 
 const terminalScript = [
