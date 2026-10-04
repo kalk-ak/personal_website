@@ -63,7 +63,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 const highlights = [
   {
     icon: Brain,
-    text: "Extensive experience fine-tuning general purpose models to hit a specific goal, including a 250 million parameter FinBERT and several other language models",
+    text: "Transfer learning to adapt pretrained models to a specific task, from classification and regression to generation and tokenizing time series signals",
   },
   {
     icon: Cpu,
