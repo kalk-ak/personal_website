@@ -152,21 +152,6 @@ export default function Skills() {
             </motion.div>
           ))}
         </div>
-
-        {/* Currently learning banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-10 flex items-center gap-4 px-6 py-4 rounded-xl border border-[rgba(0,245,212,0.12)] bg-[rgba(0,245,212,0.03)]"
-        >
-          <div className="w-2 h-2 rounded-full bg-[#00f5d4] animate-pulse shrink-0" />
-          <p className="text-sm text-[#64748b]">
-            <span className="text-[#00f5d4] font-mono mr-2">Currently exploring:</span>
-            World Models · Diffusion Policies · Foundation Models for Robotics
-          </p>
-        </motion.div>
       </div>
     </FadeSection>
   );
