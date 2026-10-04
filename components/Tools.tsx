@@ -356,7 +356,7 @@ export default function Tools() {
       <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[rgba(0,245,212,0.04)] blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10 mb-12">
-        <p className="font-mono text-sm text-[#00f5d4] tracking-widest mb-3">04 // TOOLS</p>
+        <p className="font-mono text-sm text-[#00f5d4] tracking-widest mb-3">05 // TOOLS</p>
         <h2 className="text-4xl md:text-5xl font-bold text-white">
           What I{" "}
           <span className="text-gradient-cyan">Build With</span>

@@ -75,7 +75,7 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="font-mono text-sm text-[#00f5d4] tracking-widest mb-3">03 // SKILLS</p>
+          <p className="font-mono text-sm text-[#00f5d4] tracking-widest mb-3">04 // SKILLS</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Technical{" "}
             <span className="text-gradient-purple">Arsenal</span>
