@@ -8,9 +8,9 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Tools", href: "#tools" },
-  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Courses", href: "#courses" },
   { label: "Contact", href: "#contact" },
@@ -75,7 +75,7 @@ export default function Nav() {
       },
       { rootMargin: "-40% 0px -55% 0px" }
     );
-    ["about", "skills", "tools", "experience", "projects", "courses", "contact"].forEach((id) => {
+    ["about", "experience", "skills", "tools", "projects", "courses", "contact"].forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
