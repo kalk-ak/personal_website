@@ -79,7 +79,6 @@ interface Tool {
 interface Category {
   title: string;
   color: string;
-  reverse?: boolean;
   tools: Tool[];
 }
 
@@ -87,7 +86,6 @@ const categories: Category[] = [
   {
     title: "ML, Data & RL",
     color: "#00f5d4",
-    reverse: true,
     tools: [
       { name: "NumPy", icon: SiNumpy, description: "The array math everything else in Python ML builds on.", url: "https://numpy.org/" },
       { name: "Pandas", icon: SiPandas, description: "Wrangling and cleaning tabular data.", url: "https://pandas.pydata.org/" },
@@ -117,7 +115,6 @@ const categories: Category[] = [
   {
     title: "Web Scraping & Data Engineering",
     color: "#fb7185",
-    reverse: true,
     tools: [
       { name: "Requests", icon: Send, description: "Go-to HTTP library for quick calls and scrapes.", url: "https://requests.readthedocs.io/" },
       { name: "BeautifulSoup", icon: Soup, description: "Parses structured data out of messy HTML and XML.", url: "https://www.crummy.com/software/BeautifulSoup/" },
@@ -146,7 +143,6 @@ const categories: Category[] = [
   {
     title: "Hardware & Edge",
     color: "#f97316",
-    reverse: true,
     tools: [
       { name: "Raspberry Pi", icon: SiRaspberrypi, description: "Small computer for robotics and embedded projects.", url: "https://www.raspberrypi.com/" },
       { name: "Raspberry Pi OS", icon: SiRaspberrypi, description: "Flashed onto Pi boards to run them headless.", url: "https://www.raspberrypi.com/software/" },
@@ -158,7 +154,6 @@ const categories: Category[] = [
   {
     title: "Languages & Low-Level",
     color: "#38bdf8",
-    reverse: true,
     tools: [
       { name: "C++", icon: SiCplusplus, description: "One of my first languages. Performance critical code and robotics, close to the hardware.", url: "https://isocpp.org/" },
       { name: "C", icon: SiC, description: "What's underneath everything else.", url: "https://en.wikipedia.org/wiki/C_(programming_language)" },
@@ -175,7 +170,6 @@ const categories: Category[] = [
   {
     title: "Dev Environment",
     color: "#a3e635",
-    reverse: true,
     tools: [
       { name: "Hyprland", icon: SiHyprland, description: "The window manager my whole desktop is built around.", url: "https://hyprland.org/" },
       { name: "Neovim", icon: SiNeovim, description: "My editor, configured to move as fast as I think.", url: "https://neovim.io/" },
@@ -233,7 +227,7 @@ interface Layout {
 
 const INITIAL_LAYOUT: Layout = { mode: "static", repeat: 2, period: 0, duration: 20 };
 
-function MarqueeRow({ category }: { category: Category }) {
+function MarqueeRow({ category, reverse }: { category: Category; reverse: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
   // Two hidden, unpadded measuring rows: one copy and two copies of the
   // same content. The exact seamless loop distance is the difference
@@ -330,7 +324,7 @@ function MarqueeRow({ category }: { category: Category }) {
           className={`flex items-stretch gap-4 ${
             layout.mode === "static"
               ? "flex-wrap justify-center"
-              : `marquee-track ${category.reverse ? "marquee-reverse" : ""}`
+              : `marquee-track ${reverse ? "marquee-reverse" : ""}`
           }`}
           style={
             layout.mode === "marquee"
@@ -367,8 +361,10 @@ export default function Tools() {
       </div>
 
       <div className="space-y-10">
-        {categories.map((category) => (
-          <MarqueeRow key={category.title} category={category} />
+        {/* Rows alternate direction by position: the first runs left to
+            right, the next right to left, and so on down the list. */}
+        {categories.map((category, i) => (
+          <MarqueeRow key={category.title} category={category} reverse={i % 2 === 0} />
         ))}
       </div>
     </FadeSection>
