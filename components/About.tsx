@@ -27,7 +27,13 @@ const stats = [
   { value: 100, suffix: "M+", label: "Articles Scraped" },
   { value: 250, suffix: "M+", label: "Params Fine-Tuned (FinBERT)" },
   { value: 6, suffix: "+", label: "Years Building & Learning" },
-  { value: 22, suffix: "", label: "Public Repos" },
+];
+
+// Shares the fourth stat card: one number per credential instead of one total.
+const degrees = [
+  { value: 1, label: "BS Major" },
+  { value: 3, label: "Minors" },
+  { value: 2, label: "Master's" },
 ];
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
@@ -276,6 +282,22 @@ export default function About() {
                   <div className="text-xs text-[#64748b] font-medium tracking-wide">{s.label}</div>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + stats.length * 0.1, duration: 0.5 }}
+                className="glass-card rounded-xl p-4 grid grid-cols-3 gap-1 text-center"
+              >
+                {degrees.map((d) => (
+                  <div key={d.label}>
+                    <div className="text-3xl md:text-4xl font-bold text-gradient-cyan mb-1">
+                      <Counter value={d.value} suffix="" />
+                    </div>
+                    <div className="text-xs text-[#64748b] font-medium tracking-wide">{d.label}</div>
+                  </div>
+                ))}
+              </motion.div>
             </div>
 
             {/* Highlight list */}
