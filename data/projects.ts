@@ -55,7 +55,7 @@ export const projects: Project[] = [
       "We then fine-tuned the later layers of a 250 million parameter FinBERT and several other language models, replacing their final layers with our own N-way classification so they predicted straight from the article text. In parallel we engineered features out of the news and fed those to models that want structured input instead, ensembling CatBoost and recurrent LSTMs, so the text models had something to be measured against on even footing.",
       "Then we moved toward higher frequency prediction, which put all the pressure back on the scraper. Intraday signal needs articles bounded by exact timestamps, so we built a much more capable invisible scraper that could retrieve information on the backs of powerful search engines for a specific window without getting blocked or flagged, and return what was published between two times rather than whatever happened to be indexed later.",
       "We benchmarked the forecasting side, from decision trees up to attention-based time series networks, across returns for 10 tech stocks. Afterward I pointed the same scraper at crude oil coverage during the US-Iran conflict, on the theory that a sharper and more news-driven market might outperform intuition.",
-      "The results we got for those models were high variance and barely beat the S&P 500 or random choice. What worked better was agentic orchestration, where different agents take the role of different stock market analyzers and debate how the classification is going to turn out. That is currently being explored as a startup.",
+      "The results we got for those models were high variance and barely beat the S&P 500 or random choice. What worked better was agentic orchestration, where different agents take the role of different stock market analyzers and debate how the classification is going to turn out. That idea became Secula (secula.us), the startup I founded and run as CTO.",
     ],
     highlights: [
       {
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     ],
     tech: ["Python", "FinBERT", "Doc2Vec", "CatBoost", "BiLSTM", "Transformers", "Playwright", "GoLogin", "BigQuery"],
     github: null,
-    private: "Source private, exploring this as a startup",
+    private: "Source private, this became Secula",
     live: null,
     docs: [
       {
