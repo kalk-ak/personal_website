@@ -5,9 +5,14 @@ import type { NextConfig } from "next";
 // GITHUB_ACTIONS is set) so local dev and builds still run at the root path.
 const isGithubActions = process.env.GITHUB_ACTIONS === "true";
 const repoName = "personal_website";
+const basePath = isGithubActions ? `/${repoName}` : "";
 
 const nextConfig: NextConfig = {
   output: "export",
+  // next/image doesn't add basePath to src, so components need it by hand.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   experimental: {
     viewTransition: true,
   },
@@ -16,8 +21,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   ...(isGithubActions && {
-    basePath: `/${repoName}`,
-    assetPrefix: `/${repoName}`,
+    basePath,
+    assetPrefix: basePath,
   }),
 };
 

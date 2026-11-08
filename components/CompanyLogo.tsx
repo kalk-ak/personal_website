@@ -43,7 +43,7 @@ export default function CompanyLogo({ src, company, size = 40 }: CompanyLogoProp
     >
       {/* images.unoptimized is on for the static export, so this emits a plain img */}
       <Image
-        src={src}
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH}${src}`}
         alt={`${company} logo`}
         width={size}
         height={size}
