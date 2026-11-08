@@ -37,6 +37,22 @@ interface ExperienceEntry {
 
 const experiences: ExperienceEntry[] = [
   {
+    id: "secula",
+    role: "Founder & CTO",
+    company: "Secula",
+    link: "https://secula.us",
+    location: "Baltimore, Maryland, United States",
+    period: "Aug 2026 to Present",
+    start: "2026-08",
+    end: null,
+    logo: "/logos/secula.svg",
+    type: "Startup",
+    description:
+      "Founded Secula, a platform where teams of AI agents research stocks, argue over each trade, and run a user's trading strategy on their schedule, inside limits they set. As CTO I lead the engineering: research desks where bull, bear, and risk analysts debate before a portfolio manager decides, backtesting, practice and live trading through connected brokers with an approval queue and a kill switch, and a tamper-evident record that scores every call against what the market actually did. It grew out of my stock prediction capstone, where agents arguing beat every model we fine-tuned.",
+    tech: ["Python", "FastAPI", "LangChain", "Multi-Agent Systems", "MCP", "React", "TypeScript", "Docker"],
+    current: true,
+  },
+  {
     role: "Course Assistant, Artificial Intelligence",
     company: "Johns Hopkins Whiting School of Engineering",
     link: "https://engineering.jhu.edu/",
