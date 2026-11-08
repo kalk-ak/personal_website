@@ -240,7 +240,7 @@ export default function About() {
               the Data Science side I&apos;m building scalable, reliable machine learning, deep
               learning, and reinforcement learning systems. It&apos;s a lot to juggle, but I
               just like{" "}
-              <ExtLink href="https://www.tiktok.com/@thetysontheory/video/7519567810939473166">
+              <ExtLink href="https://www.youtube.com/watch?v=BOkFfvTGuGk">
                 challenging
               </ExtLink>{" "}
               myself.
