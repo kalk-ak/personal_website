@@ -23,12 +23,12 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "Kaleb Aklilu | ML & Robotics Engineer",
+  title: "Kaleb Aklilu | ML & Systems Engineer",
   description:
-    "Machine Learning & Robotics Engineer building intelligent systems at the frontier of Embodied AI, automation, and scalable software.",
+    "Machine Learning & Systems Engineer building ML pipelines, backend infrastructure, and automation that scales.",
   keywords: [
     "Machine Learning",
-    "Robotics",
+    "Systems Engineering",
     "Embodied AI",
     "Software Engineer",
     "Python",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Kaleb Aklilu" }],
   openGraph: {
-    title: "Kaleb Aklilu | ML & Robotics Engineer",
+    title: "Kaleb Aklilu | ML & Systems Engineer",
     description:
-      "Building intelligent systems at the frontier of Embodied AI and automation.",
+      "Building ML pipelines, backend infrastructure, and automation that scales.",
     type: "website",
   },
 };

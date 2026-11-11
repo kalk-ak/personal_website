@@ -91,7 +91,7 @@ const highlights = [
 ];
 
 const terminalScript = [
-  { cmd: "whoami", output: ["ML Engineer | Roboticist | Systems Builder"] },
+  { cmd: "whoami", output: ["ML Engineer | Systems Engineer"] },
   {
     cmd: "cat mission.txt",
     output: ["Build things that impact human lives,", "and keep learning along the way."],

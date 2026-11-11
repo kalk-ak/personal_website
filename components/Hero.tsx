@@ -8,9 +8,8 @@ import FadeSection from "@/components/FadeSection";
 
 const ROLES = [
   "Machine Learning Engineer",
-  "Robotics Engineer",
+  "Systems Engineer",
   "Passionate about Embodied AI",
-  "Systems Architect",
   "Automation Builder",
 ];
 
@@ -256,7 +255,7 @@ export default function Hero() {
           transition={{ delay: 0.85, duration: 0.6 }}
           className="text-base md:text-lg text-[#64748b] max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          I build in <span className="text-[#e2e8f0]">robotics</span>,{" "}
+          I build in <span className="text-[#e2e8f0]">machine learning</span>,{" "}
           <span className="text-[#e2e8f0]">automation</span>, and{" "}
           <span className="text-[#e2e8f0]">backend systems</span>, things that
           make people and your business more capable.

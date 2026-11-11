@@ -87,7 +87,7 @@ export default function Contact() {
                 <span className="text-gradient-cyan">Me</span>
               </h3>
               <p className="text-[#64748b] text-sm max-w-md">
-                Happy to talk about ML Engineering, Robotics, or Embodied AI, whether
+                Happy to talk about ML Engineering, Systems, or Embodied AI, whether
                 that is a project, a collaboration, or just a question.
               </p>
             </div>
