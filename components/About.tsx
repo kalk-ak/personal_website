@@ -239,11 +239,7 @@ export default function About() {
               <ExtLink href="https://www.clsp.jhu.edu/">Human Language Technology</ExtLink>. On
               the Data Science side I&apos;m building scalable, reliable machine learning, deep
               learning, and reinforcement learning systems. It&apos;s a lot to juggle, but I
-              just like{" "}
-              <ExtLink href="https://www.youtube.com/watch?v=BOkFfvTGuGk">
-                challenging
-              </ExtLink>{" "}
-              myself.
+              just like challenging myself.
             </p>
             <p className="text-[#94a3b8] text-base leading-relaxed">
               I started building at 15, running a small startup with a friend, and never
